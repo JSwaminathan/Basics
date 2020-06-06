@@ -17,6 +17,7 @@
       </environment>
    </environments>
 	
+
    <mappers>
       <mapper resource = "mybatis/Student.xml"/>
    </mappers>

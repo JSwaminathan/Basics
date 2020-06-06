@@ -1,5 +1,8 @@
 package programming;
 
+/**
+ *  Node
+ */
 public class Node<T extends Comparable<T>> {
 	protected T value;
 	Node<T> left;

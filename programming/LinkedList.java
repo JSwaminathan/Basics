@@ -1,5 +1,8 @@
 package programming;
 
+/**
+ * Linked List
+ */
 public class LinkedList<T extends Comparable<T>> {
 	protected LLNode<T> head;
 	protected LLNode<T> tail;

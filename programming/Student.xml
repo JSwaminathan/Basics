@@ -16,4 +16,5 @@
       SELECT * FROM STUDENT WHERE ID = #{id};
    </select>
     	
+
 </mapper>

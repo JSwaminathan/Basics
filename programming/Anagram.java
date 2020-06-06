@@ -2,6 +2,9 @@ package programming;
 
 import java.util.Scanner;
 
+/**
+ * Anagram
+ */
 public class Anagram {
 
 	public boolean isPallindrome(String str1, String str2) {

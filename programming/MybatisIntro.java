@@ -26,7 +26,7 @@ public class MybatisIntro {
 //	         System.out.println(st.getPercentage());         
 //	         System.out.println(st.getEmail());        
 //	         System.out.println(st.getPhone());   
-		}
+	}
 
 		System.out.println("Records Read Successfully ");
 		session.commit();

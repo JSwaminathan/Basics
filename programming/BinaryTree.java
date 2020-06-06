@@ -1,5 +1,7 @@
 package programming;
-
+/**
+ * Binary Tree
+ */
 public class BinaryTree <T extends Comparable<T>> {
 	protected Node<T> root;
 	

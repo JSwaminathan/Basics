@@ -2,6 +2,9 @@ package programming;
 
 import java.util.Scanner;
 
+/**
+ *  String uniqueness
+ */
 public class StringUniqueness {
 	protected static int[] count;
 	static {

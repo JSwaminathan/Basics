@@ -21,6 +21,7 @@ public class MybatisIntro {
 		SqlSession session = sqlSessionFactory.openSession();
 
 		// Retrieve all the students.
+		// This uses a pooled connection for the mysql database.
 		List<Student> student = session.selectList("Student.getAll");
 
 		for (Student st : student) {

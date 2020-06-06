@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 /**
- *  Mybatis basics - select
+ *  Mybatis basics - SELECT statement
  */
 public class MybatisIntro {
 

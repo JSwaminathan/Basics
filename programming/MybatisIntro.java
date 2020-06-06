@@ -9,6 +9,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+/**
+ *  Mybatis basics - select
+ */
 public class MybatisIntro {
 
 	public static void main(String args[]) throws IOException {
@@ -22,10 +25,6 @@ public class MybatisIntro {
 
 		for (Student st : student) {
 			System.out.println(st.getId() + " " + st.getName() + " " + st.getEmail());
-//	         System.out.println(st.getBranch());
-//	         System.out.println(st.getPercentage());         
-//	         System.out.println(st.getEmail());        
-//	         System.out.println(st.getPhone());   
 	}
 
 		System.out.println("Records Read Successfully ");

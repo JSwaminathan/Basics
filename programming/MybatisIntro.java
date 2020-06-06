@@ -20,7 +20,7 @@ public class MybatisIntro {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = sqlSessionFactory.openSession();
 
-		// Retrieve ALL students.
+		// Retrieve all the students.
 		List<Student> student = session.selectList("Student.getAll");
 
 		for (Student st : student) {

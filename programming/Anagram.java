@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Anagram
  */
 public class Anagram {
-
+// this method is checking whether the word is a palindroe
 	public boolean isPallindrome(String str1, String str2) {
 		
 		int len1 = str1.length();

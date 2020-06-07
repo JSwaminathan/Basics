@@ -6,7 +6,13 @@ import java.util.Scanner;
  * Anagram
  */
 public class Anagram {
-// this method is checking whether the word is a palindroe
+
+	/**
+	 * purpose of the program is to check whether a given word is a palindrome
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
 	public boolean isPallindrome(String str1, String str2) {
 		
 		int len1 = str1.length();

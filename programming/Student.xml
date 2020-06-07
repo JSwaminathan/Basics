@@ -4,7 +4,7 @@
 	
 <mapper namespace = "Student">	
 
-   <resultMap id = "result" type = "Student">
+   <resultMap id = "result" type = "programming.Student">
       <result property = "id" column = "ID"/>	    
    </resultMap>
 	

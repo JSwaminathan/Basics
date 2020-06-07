@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="dependencies/|mybatis/" kind="src" path=""/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/asm-7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/cglib-3.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/javassist-3.26.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/log4j-api-2.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/log4j-core-2.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/mybatis-3.5.4.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/mysql-connector-java-8.0.20.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/ognl-3.2.12.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/slf4j-api-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/slf4j-log4j12-1.7.30.jar"/>
+	<classpathentry kind="lib" path="dependencies"/>
+	<classpathentry kind="lib" path="mybatis"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

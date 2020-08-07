@@ -27,7 +27,6 @@ public class MybatisIntro {
 		for (Student st : student) {
 			System.out.println(st.getId() + " " + st.getName() + " " + st.getEmail());
 	}
-
 		System.out.println("Records Read Successfully ");
 		session.commit();
 		session.close();

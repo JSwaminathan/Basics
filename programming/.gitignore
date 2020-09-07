@@ -9,3 +9,12 @@
 /Stacks.class
 /StringUniqueness.class
 /Student.class
+/MultipleStack.class
+/StackDriver.class
+/EmptyQueueException.class
+/PriorityQueue$Priority.class
+/PriorityQueue.class
+/PriorityQueueItem.class
+/Queue.class
+/QueueDriver.class
+/QueueItem.class

@@ -25,7 +25,9 @@ public class MybatisIntro {
 		List<Student> student = session.selectList("Student.getAll");
 
 		for (Student st : student) {
-			System.out.println(st.getId() + " " + st.getName() + " " + st.getEmail());
+			System.out.println(st.getId() + " Name: " + st.getName() + " " +
+					                        " Email: " + st.getEmail() + " " +
+					                        " Phone: " + st.getPhone());
 	}
 		System.out.println("Records Read Successfully ");
 		session.commit();

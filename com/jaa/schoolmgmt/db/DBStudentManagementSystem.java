@@ -9,11 +9,21 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.jaa.schoolmgmt.Student;
+
 public class DBStudentManagementSystem {
 
-	public List<Student> getAllStudents() throws IOException {
+	public List<Student> getAllStudents() {
 
-		Reader reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = sqlSessionFactory.openSession();
 
@@ -32,11 +42,7 @@ public class DBStudentManagementSystem {
 
 	}
 
-	public void updatestudent() {
-
-	}
-
-	public void ListStudents() {
+	public void updateStudent() {
 
 	}
 

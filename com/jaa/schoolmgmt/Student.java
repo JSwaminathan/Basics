@@ -1,4 +1,4 @@
-package programming;
+package com.jaa.schoolmgmt;
 
 /**
  * Student
@@ -41,4 +41,10 @@ public class Student {
 		this.id = id;
 	}
 
+	public String toString() {
+		return (
+				"ID " + id + " ; Name: " + name + " ; " +
+				"Email " + email + " ; Phone: " + phone 
+			);
+	}
 }

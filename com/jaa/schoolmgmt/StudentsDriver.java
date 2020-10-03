@@ -1,9 +1,13 @@
-package programming;
+package com.jaa.schoolmgmt;
 
+import java.util.List;
 import java.util.Scanner;
+
+import com.jaa.schoolmgmt.db.DBStudentManagementSystem;
 
 public class StudentsDriver {
 	public static void main(String[] args) {
+
 		DBStudentManagementSystem db = new DBStudentManagementSystem();
 		Scanner scanner = new Scanner(System.in);
 		int choice;
@@ -14,24 +18,35 @@ public class StudentsDriver {
 			choice = scanner.nextInt();
 			switch (choice) {
 			case 1:
-				db.Createstudents();
+				db.createStudent();
 				break;
 			case 2:
-				db.Updatestudents();
+				db.updateStudent();
 				break;
 			case 3:
-				db.listStudents();
+				printStudents();
 				break;
 			case 4:
-				db.deleteStudents();
+				db.deleteStudent();
 				break;
 			case 5:
 				System.out.println("Exiting Student Management System.");
+				System.exit(0);
+				break;
 			default:
 				System.err.println("invalid choice ");
 
 			}
 
+		}
+	}
+
+	private static void printStudents() {
+		DBStudentManagementSystem db = new DBStudentManagementSystem();
+		List<Student> students = db.getAllStudents();
+		
+		for (Student student : students) {
+			System.out.println("Student: " + student);
 		}
 	}
 
@@ -49,8 +64,7 @@ public class StudentsDriver {
 		System.out.println("");
 		System.out.println("5.eXit");
 		System.out.println("");
-		System.out.println("Enter your choice: ");
-		System.out.println("");
+		System.out.print("Enter your choice: ");
 	}
 
 }

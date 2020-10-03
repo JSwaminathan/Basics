@@ -27,6 +27,6 @@ public class Fpq extends PriorityQueue {
 		} else {
 			return (false);
 		}
-//
+
 	}
 }

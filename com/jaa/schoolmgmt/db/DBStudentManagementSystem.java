@@ -1,4 +1,4 @@
-package programming;
+package com.jaa.schoolmgmt.db;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -9,19 +9,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
 public class DBStudentManagementSystem {
-	public static void main(String[] args) throws IOException {
-		DBStudentManagementSystem db = new DBStudentManagementSystem();
-		List<Student> students = db.getAllStudents();
-		for (Student st : students) {
-			System.out.println("id   " + st.getId());
-			System.out.println("name " + st.getName());
-			System.out.println("mail id  " + st.getEmail());
-			System.out.println("phone  " + st.getPhone());
-		}
 
-		}
 	public List<Student> getAllStudents() throws IOException {
 
 		Reader reader = Resources.getResourceAsReader("SqlMapConfig.xml");
@@ -37,19 +26,21 @@ public class DBStudentManagementSystem {
 
 		return (students);
 
-}
-	public void Createstudents () {
-		
-		
 	}
-	
-	public void Updatestudents() {
-		
+
+	public void createStudent() {
+
 	}
-	public void listStudents() {
-		
+
+	public void updatestudent() {
+
 	}
-	public void deleteStudents() {
-		
+
+	public void ListStudents() {
+
+	}
+
+	public void deleteStudent() {
+
 	}
 }

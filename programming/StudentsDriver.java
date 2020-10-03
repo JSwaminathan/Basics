@@ -7,7 +7,37 @@ public class StudentsDriver {
 		DBStudentManagementSystem db = new DBStudentManagementSystem();
 		Scanner scanner = new Scanner(System.in);
 		int choice;
-		System.out.println("would you like to :");
+
+		while (true) {
+			showMenu();
+
+			choice = scanner.nextInt();
+			switch (choice) {
+			case 1:
+				db.Createstudents();
+				break;
+			case 2:
+				db.Updatestudents();
+				break;
+			case 3:
+				db.listStudents();
+				break;
+			case 4:
+				db.deleteStudents();
+				break;
+			case 5:
+				System.out.println("Exiting Student Management System.");
+			default:
+				System.err.println("invalid choice ");
+
+			}
+
+		}
+	}
+
+	public static void showMenu() {
+		System.out.println("Welcome to Student Management System.");
+		System.out.println("Would you like to :");
 		System.out.println("");
 		System.out.println("1.create a new student profile");
 		System.out.println("");
@@ -17,27 +47,10 @@ public class StudentsDriver {
 		System.out.println("");
 		System.out.println("4.delete a student profile");
 		System.out.println("");
-		System.out.println("enter your choice");
+		System.out.println("5.eXit");
 		System.out.println("");
-
-		choice = scanner.nextInt();
-		if (choice == 1) {
-			db.Createstudents();
-
-		} else if (choice == 2) {
-			db.Updatestudents();
-			
-
-		} else if (choice == 3) {
-			db.listStudents();
-
-		} else if (choice == 4) {
-			db.deleteStudents();
-
-		} else {
-			System.err.println("invalid choice ");
-		}
-
+		System.out.println("Enter your choice: ");
+		System.out.println("");
 	}
 
 }

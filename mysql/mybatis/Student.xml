@@ -4,7 +4,7 @@
 	
 <mapper namespace = "Student">	
 
-   <resultMap id = "result" type = "com.jaa.studentmgmt.Student">
+   <resultMap id = "result" type = "com.jaa.schoolmgmt.Student">
       <result property = "id" column = "ID"/>	    
    </resultMap>
 	

@@ -9,6 +9,7 @@ public class StudentsDriver {
 	public static void main(String[] args) {
 
 		DBStudentManagementSystem db = new DBStudentManagementSystem();
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int choice;
 

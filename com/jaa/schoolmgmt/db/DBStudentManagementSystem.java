@@ -23,7 +23,7 @@ public class DBStudentManagementSystem {
 			e.printStackTrace();
 			return null;
 		}
-		
+
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = sqlSessionFactory.openSession();
 
@@ -42,7 +42,24 @@ public class DBStudentManagementSystem {
 
 	}
 
-	public void updateStudent() {
+	public void updateStudent(Student student) {
+
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return;
+		}
+
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		SqlSession session = sqlSessionFactory.openSession();
+
+		session.update("Student.updateStudent",student);
+
+		session.commit();
+		session.close();
 
 	}
 

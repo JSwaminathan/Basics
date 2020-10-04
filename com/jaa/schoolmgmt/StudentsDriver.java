@@ -22,7 +22,7 @@ public class StudentsDriver {
 				db.createStudent();
 				break;
 			case 2:
-				db.updateStudent();
+				updateStudent();
 				break;
 			case 3:
 				printStudents();
@@ -45,10 +45,38 @@ public class StudentsDriver {
 	private static void printStudents() {
 		DBStudentManagementSystem db = new DBStudentManagementSystem();
 		List<Student> students = db.getAllStudents();
-		
+
 		for (Student student : students) {
 			System.out.println("Student: " + student);
 		}
+	}
+
+	private static void updateStudent() {
+		DBStudentManagementSystem db = new DBStudentManagementSystem();
+
+		System.out.println("Enter ID for updation: ");
+		Student student = new Student();
+		Scanner scanner = new Scanner(System.in);
+		String id = scanner.next();
+		student.setId(id);
+		
+		// TODO check ID exists, before trying to update.
+		
+		System.out.println("Enter Name for updation: ");
+		String name = scanner.next();
+		student.setName(name);
+		
+		System.out.println("Enter Email for updation: ");
+		String email = scanner.next();
+		student.setEmail(email);
+		
+		System.out.println("Enter Phone for updation: ");
+		String phone = scanner.next();
+		student.setPhone(phone);
+		
+		db.updateStudent(student);
+		System.out.println("Student: " + student);
+
 	}
 
 	public static void showMenu() {

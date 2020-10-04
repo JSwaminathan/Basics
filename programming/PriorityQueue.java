@@ -9,6 +9,11 @@ package programming;
  *
  */
 public class PriorityQueue extends Queue {
+	
+	
+	
+	
+	
 	public enum Priority {
 		MIN, MEDIUM, MAX
 	}
@@ -30,7 +35,6 @@ public class PriorityQueue extends Queue {
 			return;
 		}
 
-		
 		setFirstItemBeforeLowerPriority(item);
 	}
 
@@ -41,27 +45,27 @@ public class PriorityQueue extends Queue {
 	 * @param p2
 	 * @return
 	 */
-	public boolean isLowerPriority(Priority p1, Priority p2) {
-		if (p1 == p2) {
+	public boolean isLowerPriority(PriorityQueueItem pqi1, PriorityQueueItem pqi2) {
+		if (pqi1 == pqi2) {
 			return false;
 		}
 
-		switch (p1) {
+		switch (pqi1.priority) {
 		case MAX:
 			return (false);
 		case MEDIUM:
-			if (p2 == Priority.MAX) {
+			if (pqi2.priority == Priority.MAX) {
 				return (true);
 			} else {
 				return (false);
 			}
 		case MIN:
-			if (p2 == Priority.MEDIUM || p2 == Priority.MAX) {
+			if (pqi2.priority == Priority.MEDIUM || pqi2.priority == Priority.MAX) {
 				return (true);
 			}
 			break;
 		}
-		
+
 		return (false);
 	}
 
@@ -71,20 +75,21 @@ public class PriorityQueue extends Queue {
 		int len = al.size();
 
 		boolean found = false;
-		
+
 		for (int i = 0; i < len; i++) {
 			PriorityQueueItem currItem = (PriorityQueueItem) al.get(i);
-			if (isLowerPriority(currItem.priority, pqi.priority)) {
+			if (isLowerPriority(currItem, pqi)) {
 				// this is the index we are interested in inserting!
 				al.add(i, item);
 				return;
 			}
 		}
-		
+
 		if (found == false) {
 			// Insert at the end since this is the *least* priority now.
 			al.add(item);
 		}
 
 	}
+	
 }

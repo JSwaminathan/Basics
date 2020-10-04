@@ -5,17 +5,22 @@ import programming.PriorityQueue.Priority;
 public class QueueDriver {
 
 	public static void main(String[] args) {
-		PriorityQueue queue = new PriorityQueue();
+		Fpq queue = new Fpq(1, 10);
 
-		PriorityQueueItem pqi1 = new PriorityQueueItem("Jay", Priority.MAX);
-		PriorityQueueItem pqi2 = new PriorityQueueItem("Ashwin", Priority.MIN);
-		PriorityQueueItem pqi3 = new PriorityQueueItem("Arjun", Priority.MEDIUM);
-		PriorityQueueItem pqi4 = new PriorityQueueItem("Meena", Priority.MAX);
+//		PriorityQueueItem pqi2 = new PriorityQueueItem("Ashwin", Priority.MAX);
+//		PriorityQueueItem pqi3 = new PriorityQueueItem("Arjun", Priority.MIN);
+//		PriorityQueueItem pqi4 = new PriorityQueueItem("Meena", Priority.MAX);
 
-		queue.enqueue(pqi1);
+		PriorityQueueItem pqi2 = new FlexiblePriorityQueueItem("Ashwin", 3);
+		PriorityQueueItem pqi3 = new FlexiblePriorityQueueItem("Arjun",1 );
+		PriorityQueueItem pqi4 = new FlexiblePriorityQueueItem("Meena", 4);
+		PriorityQueueItem pqi5 = new FlexiblePriorityQueueItem("Jay", 2);
+		
+		
 		queue.enqueue(pqi2);
 		queue.enqueue(pqi3);
 		queue.enqueue(pqi4);
+		queue.enqueue(pqi5);
 
 		while (true) {
 			try {

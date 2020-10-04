@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry excluding="dependencies/|mybatis/" kind="src" path=""/>
+	<classpathentry excluding="dependencies/|mybatis/|mysql/" kind="src" path=""/>
 	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/asm-7.1.jar"/>
 	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/cglib-3.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/commons-logging-1.2.jar"/>
@@ -14,7 +14,6 @@
 	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/ognl-3.2.12.jar"/>
 	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/slf4j-api-1.7.30.jar"/>
 	<classpathentry kind="lib" path="C:/Arjun/mysql/dependencies/slf4j-log4j12-1.7.30.jar"/>
-	<classpathentry kind="lib" path="dependencies"/>
-	<classpathentry kind="lib" path="mybatis"/>
+	<classpathentry kind="lib" path="mysql"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

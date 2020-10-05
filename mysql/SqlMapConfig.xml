@@ -11,7 +11,11 @@
             <property name = "driver" value = "com.mysql.jdbc.Driver"/>
             <property name = "url" value = "jdbc:mysql://localhost:3306/details"/>
             <property name = "username" value = "root"/>
+<<<<<<< Updated upstream
             <property name = "password" value = "arjun"/>
+=======
+            <property name = "password" value = "arjuacchu"/>
+>>>>>>> Stashed changes
          </dataSource>   
          
       </environment>

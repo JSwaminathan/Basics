@@ -19,4 +19,8 @@
    <update id = "updateStudent" parameterType = "com.jaa.schoolmgmt.Student">
        UPDATE STUDENT SET EMAIL = #{email}, NAME = #{name}, PHONE = #{phone} WHERE ID = #{id};
    </update>
+   
+    <insert id = "insertStudent" parameterType = "com.jaa.schoolmgmt.Student">
+       INSERT STUDENT SET EMAIL = #{email}, NAME = #{name}, PHONE = #{phone} WHERE ID = #{id};
+   </insert>
 </mapper>

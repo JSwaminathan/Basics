@@ -9,6 +9,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.jaa.schoolmgmt.Student;
+
 /**
  *  Mybatis basics - SELECT statement
  */

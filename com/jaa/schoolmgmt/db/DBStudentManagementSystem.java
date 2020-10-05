@@ -38,7 +38,27 @@ public class DBStudentManagementSystem {
 
 	}
 
-	public void createStudent() {
+	public void createStudent(Student student) {
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return;
+		}
+
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		SqlSession session = sqlSessionFactory.openSession();
+		
+		 session.insert("Student.insertStudent", student);
+	      System.out.println("record inserted successfully");
+	      session.commit();
+	      session.close();
+			
+
+		
+
 
 	}
 

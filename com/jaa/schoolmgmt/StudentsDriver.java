@@ -19,7 +19,7 @@ public class StudentsDriver {
 			choice = scanner.nextInt();
 			switch (choice) {
 			case 1:
-				db.createStudent();
+				createStudent();
 				break;
 			case 2:
 				updateStudent();
@@ -71,6 +71,33 @@ public class StudentsDriver {
 		student.setEmail(email);
 		
 		System.out.println("Enter Phone for updation: ");
+		String phone = scanner.next();
+		student.setPhone(phone);
+		
+		db.updateStudent(student);
+		System.out.println("Student: " + student);
+
+	}
+	private static void createStudent() {
+		DBStudentManagementSystem db = new DBStudentManagementSystem();
+
+		System.out.println("Enter new id to create profile: ");
+		Student student = new Student();
+		Scanner scanner = new Scanner(System.in);
+		String id = scanner.next();
+		student.setId(id);
+		
+		// TODO check ID exists, before trying to update.
+		
+		System.out.println("Enter Name : ");
+		String name = scanner.next();
+		student.setName(name);
+		
+		System.out.println("Enter Email : ");
+		String email = scanner.next();
+		student.setEmail(email);
+		
+		System.out.println("Enter Phone : ");
 		String phone = scanner.next();
 		student.setPhone(phone);
 		

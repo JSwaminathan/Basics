@@ -101,8 +101,8 @@ public class StudentsDriver {
 		String phone = scanner.next();
 		student.setPhone(phone);
 		
-		db.updateStudent(student);
-		System.out.println("Student: " + student);
+		db.createStudent(student);
+		
 
 	}
 

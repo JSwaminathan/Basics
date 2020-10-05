@@ -42,6 +42,7 @@ public class DBStudentManagementSystem {
 		Reader reader;
 		try {
 			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+			System.out.println("i am here ");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -50,12 +51,14 @@ public class DBStudentManagementSystem {
 
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = sqlSessionFactory.openSession();
-		
+		try {
 		 session.insert("Student.insertStudent", student);
 	      System.out.println("record inserted successfully");
 	      session.commit();
 	      session.close();
-			
+		}catch(RuntimeException re) {
+			re.printStackTrace();
+		}
 
 		
 

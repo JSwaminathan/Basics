@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.jaa.schoolmgmt.Student;
+import com.jaa.schoolmgmt.StudentMarks;
 
 public class DBStudentManagementSystem {
 
@@ -42,7 +43,6 @@ public class DBStudentManagementSystem {
 		Reader reader;
 		try {
 			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
-			System.out.println("i am here ");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -88,5 +88,23 @@ public class DBStudentManagementSystem {
 
 	public void deleteStudent() {
 
+	}
+	public void getStudentMarks(StudentMarks student) {
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return;
+		}
+
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		SqlSession session = sqlSessionFactory.openSession();
+
+		session.update("studentMarks.getAll",student);
+
+		session.commit();
+		session.close();
 	}
 }

@@ -30,4 +30,13 @@
 		(#{id}, #{name},
 		#{phone}, #{email});
 	</insert>
+	
+	<resultMap id="result" type="com.jaa.schoolmgmt.StudentMarks">
+		<result property="id" column="ID" />
+	</resultMap>
+
+	<select id="getAll" resultMap="resultMarks">
+		SELECT * FROM STUDENTMARKS;
+	</select>
+
 </mapper>

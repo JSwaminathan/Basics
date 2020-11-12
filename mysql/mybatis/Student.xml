@@ -7,6 +7,9 @@
 	<resultMap id="result" type="com.jaa.schoolmgmt.Student">
 		<result property="id" column="ID" />
 	</resultMap>
+	
+	<resultMap id="marks" type="com.jaa.schoolmgmt.Marks">
+	</resultMap>
 
 	<select id="getAll" resultMap="result">
 		SELECT * FROM STUDENT;
@@ -16,6 +19,21 @@
 		SELECT * FROM
 		STUDENT WHERE ID = #{id};
 	</select>
+	
+	<select id="getAvg"  resultMap="marks">
+		select avg(english) as"english", avg(maths) as"maths",avg(chemistry) as"chemistry",avg(physics) as"physics",avg(biology) as"biology" from student_marks;
+		
+	</select>
+
+	<select id="getMax"  resultMap="marks">
+		select max(english) as"english", max(maths) as"maths",max(chemistry) as"chemistry",max(physics) as"physics", max(biology) as"biology" from student_marks;
+
+	</select>
+	<select id="getMin"  resultMap="marks">
+		select min(english) as"english", min(maths) as"maths",min(chemistry) as"chemistry",min(physics) as"physics", min(biology) as"biology" from student_marks;
+
+	</select>
+
 
 	<update id="updateStudent"
 		parameterType="com.jaa.schoolmgmt.Student">
@@ -30,4 +48,5 @@
 		(#{id}, #{name},
 		#{phone}, #{email});
 	</insert>
+	
 </mapper>

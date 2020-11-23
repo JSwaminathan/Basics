@@ -2,20 +2,29 @@ package com.jaa.schoolmgmt;
 
 public class Marks {
 
-	private float eng;
-	public float getEng() {
-		return eng;
-	}
-
-	public void setEng(float eng) {
-		this.eng = eng;
-	}
-
+	private int id;
+	private String name;
 	private float biology;
 	private float physics;
 	private float english;
 	private float maths;
 	private float chemistry;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public float getBiology() {
 		return biology;
@@ -58,12 +67,8 @@ public class Marks {
 	}
 
 	public String toString() {
-		String marks = 
-				"English: " + english + " :: " + 
-				"Maths: " + maths + " :: " + 
-				"Physics: " + physics + " :: " + 
-				"Chemistry: " + chemistry + " :: " + 
-				"Biology: " + biology ;
+		String marks = "Name :" + name + ":: " + "ID : " + id + ":: " + "English: " + english + " :: " + "Maths: " + maths
+				+ " :: " + "Physics: " + physics + " :: " + "Chemistry: " + chemistry + " :: " + "Biology: " + biology;
 		return (marks);
- 	}
+	}
 }

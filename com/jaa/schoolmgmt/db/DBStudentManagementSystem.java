@@ -39,6 +39,27 @@ public class DBStudentManagementSystem {
 
 	}
 
+	public List<Marks> getStudentInfo() {
+
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Marks> marks = session.selectList("Student.getStudentInfo");
+
+		session.commit();
+		session.close();
+
+		return (marks);
+	}
+
 	public void createStudent(Student student) {
 		Reader reader;
 		try {
@@ -125,6 +146,7 @@ public class DBStudentManagementSystem {
 
 		return (marks);
 	}
+
 	public Marks getMinMarks() {
 		Reader reader;
 		try {

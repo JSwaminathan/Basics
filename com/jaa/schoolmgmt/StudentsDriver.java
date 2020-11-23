@@ -24,13 +24,10 @@ public class StudentsDriver {
 			case 2:
 				updateStudent();
 				break;
-			case 3:
-				// view summary of class
-				getSummary();
-				break;
+
 			case 4:
-				System.err.println("Not implemented yet!");
-				continue;
+				getDetailedReport();
+				break;
 			case 5:
 				printStudents();
 				break;
@@ -54,20 +51,44 @@ public class StudentsDriver {
 		Marks avgMarks = db.getAvgMarks();
 		Marks maxMarks = db.getMaxMarks();
 		Marks minMarks = db.getMinMarks();
+		System.out.println("");
+		System.out.println("");
+		System.out.printf("%30s", "Summary report      ");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Subject			Average			Minimum			Maximum");
+		System.out.println("");
+		System.out.println("English	                  " + avgMarks.getEnglish() + "                    "
+				+ minMarks.getEnglish() + "                    " + maxMarks.getEnglish());
+		System.out.println("Maths	                  " + avgMarks.getMaths() + "                     "
+				+ minMarks.getMaths() + "                    " + maxMarks.getMaths());
+		System.out.println("Physics	                  " + avgMarks.getPhysics() + "                    "
+				+ minMarks.getPhysics() + "                    " + maxMarks.getPhysics());
+		System.out.println("Chemistry	          " + avgMarks.getChemistry() + "                     "
+				+ minMarks.getChemistry() + "                    " + maxMarks.getChemistry());
+		System.out.println("Biology	                  " + avgMarks.getBiology() + "                     "
+				+ minMarks.getBiology() + "                    " + maxMarks.getBiology());
 
-		System.out.println("class:	 X-E");
-		System.out.println("instructor:	Mr.pickles");
+	}
+
+	private static void getDetailedReport() {
+		DBStudentManagementSystem db = new DBStudentManagementSystem();
+		List<Marks> marksList = db.getStudentInfo();
+
+		System.out.printf("%30s\n", "Class: X-E");
+		
+		System.out.printf("%30s\n", "Instructor: Mr.pickles");
 		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("			Subject			Average			Minimum			Maximum");
-		System.out.println("");
-		System.out.println("			English	                  "+ avgMarks.getEnglish()+"                    "+minMarks.getEnglish()+"                    "+maxMarks.getEnglish());
-		System.out.println("			Maths	                  "+ avgMarks.getMaths()+"                     "+minMarks.getMaths()+"                    "+maxMarks.getMaths());
-		System.out.println("			Physics	                  "+ avgMarks.getPhysics()+"                    "+minMarks.getPhysics()+"                    "+maxMarks.getPhysics());
-		System.out.println("			Chemistry	          "+avgMarks.getChemistry()+"                     "+minMarks.getChemistry()+"                    "+maxMarks.getChemistry());
-		System.out.println("			Biology	                  "+ avgMarks.getBiology()+"                     "+minMarks.getBiology()+"                    "+maxMarks.getBiology());
-		 
+		System.out.printf("%5s %30s %10s %10s %10s %10s %10s\n", "ID", "Name", "English", "Maths", "Physics",
+				"Chemistry", "Biology");
+		for (Marks m : marksList) {
+			System.out.printf("%5s %30s %10s %10s %10s %10s %10s\n", Integer.toString(m.getId()), m.getName(),
+					Float.toString(m.getEnglish()), Float.toString(m.getMaths()), Float.toString(m.getPhysics()),
+					Float.toString(m.getChemistry()), Float.toString(m.getBiology()));
+
+		}
+		getSummary();
+
 	}
 
 	private static void printStudents() {
@@ -135,6 +156,8 @@ public class StudentsDriver {
 	}
 
 	public static void showMenu() {
+		System.out.println("");
+		System.out.println("------------------------------------");
 		System.out.println("Welcome to Student Management System.");
 		System.out.println("Would you like to :");
 		System.out.println("");
@@ -142,7 +165,6 @@ public class StudentsDriver {
 		System.out.println("");
 		System.out.println("2.update student profile ");
 		System.out.println("");
-		System.out.println("3. view summary of class");
 		System.out.println("");
 		System.out.println("4. view detailed report of class ");
 		System.out.println("");

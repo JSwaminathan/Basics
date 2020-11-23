@@ -16,9 +16,13 @@
 	</select>
 
 	<select id="getById" parameterType="int" resultMap="result">
-		SELECT * FROM
-		STUDENT WHERE ID = #{id};
+		SELECT * FROM  STUDENT WHERE ID = #{id};
 	</select>
+
+	<select  id="getStudentInfo" parameterType="int" resultMap="marks">
+		select student.ID,name,english,maths,physics,chemistry,biology from student,student_marks where student.id=student_marks.id;
+	</select>
+	
 	
 	<select id="getAvg"  resultMap="marks">
 		select avg(english) as"english", avg(maths) as"maths",avg(chemistry) as"chemistry",avg(physics) as"physics",avg(biology) as"biology" from student_marks;

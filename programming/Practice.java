@@ -1,5 +1,6 @@
 package programming;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -46,6 +47,19 @@ public class Practice {
 	}
 
 	/**
+	 * returns an array of random numbers ranging from the given range from is
+	 * inclusive while to is exclusive.......
+	 * 
+	 * @param num
+	 * @return
+	 */
+	public int[] getRandomNumbers(int num, int from, int to) {
+
+		// random.ints(num, from, to).forEach( (n)  ->  System.out.println(n + " "));
+		return ((new Random()).ints(num, from, to).toArray());
+	}
+
+	/**
 	 * to reverse string1 and if matches with string2 then return True else
 	 * false......
 	 */
@@ -75,24 +89,13 @@ public class Practice {
 
 	public static void main(String[] args) {
 		Practice practice = new Practice();
-		boolean value;
-	
 		
+		int[] rnums = practice.getRandomNumbers(5, 100, 999);
 		
-//		int num = 8;	
-//		int fac = practice.getFactorial(num);
-//		System.out.println("factorial is :" + fac);
-//		System.out.println("enter string 1 :");
-//		Scanner scanner = new Scanner(System.in);
-//		String string1 = scanner.next();
-//		System.out.println("enter string 2 :");
-//		String string2 = scanner.next();
-//		value = practice.reverseCompare(string1, string2);
-//		if (value == false) {
-//			System.out.println("strings do not match");
-//			System.exit(0);
-//		}
-//		System.out.println("Strings matched");
+		for(int i : rnums) {
+			System.out.println("Random: " + i);
+		}
+		
 
 	}
 

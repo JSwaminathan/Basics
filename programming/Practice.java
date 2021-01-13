@@ -146,6 +146,26 @@ public class Practice {
 		// random.ints(num, from, to).forEach( (n) -> System.out.println(n + " "));
 		return ((new Random()).ints(num, from, to).toArray());
 	}
+/**
+ * this method gets input of 2 arrays compares them and prints the commen elements....
+ * @param array1
+ * @param array2
+ */
+	public void compareArray(int[] array1, int[] array2) {
+		int j;
+
+		for (int i = 0; i < array1.length; i++) {
+			int value = array1[i];
+			for (j = 0; j < array2.length; j++) {
+				if (value == array2[j]) {
+					System.out.print(value + "   ");
+
+				}
+			}
+
+		}
+
+	}
 
 	/**
 	 * to reverse string1 and if matches with string2 then return True else

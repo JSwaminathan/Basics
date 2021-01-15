@@ -43,11 +43,39 @@ public class PracticeDriver {
 		practice.compareArray(array1, array2);
 	}
 
+	private static void findDuplicate() {
+
+		Practice practice = new Practice();
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Enter size of array");
+
+		int length = scanner.nextInt();
+		int[] array = new int[length];
+
+		System.out.println("Enter the elements of the  array :");
+		for (int i = 0; i < length; i++) {
+
+			array[i] = scanner.nextInt();
+		}
+		int[] duplicate = practice.findDuplicate(array);
+		for (int i = 0; i < length; i++) {
+
+			System.out.print(duplicate[i]);
+		}
+	}
+
+	private static void checkPrefix() {
+		String s1 = "Hello World";
+		String s2 = "World";
+		System.out.println((new Practice()).checkPrefix(s1, s2));
+	}
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		compareArray();
+		checkPrefix();
 
 	}
 

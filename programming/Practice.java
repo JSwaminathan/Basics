@@ -1,7 +1,9 @@
 package programming;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Vector;
 
 /**
  * @author ashwin
@@ -146,11 +148,14 @@ public class Practice {
 		// random.ints(num, from, to).forEach( (n) -> System.out.println(n + " "));
 		return ((new Random()).ints(num, from, to).toArray());
 	}
-/**
- * this method gets input of 2 arrays compares them and prints the commen elements....
- * @param array1
- * @param array2
- */
+
+	/**
+	 * this method gets input of 2 arrays compares them and prints the commen
+	 * elements....
+	 * 
+	 * @param array1
+	 * @param array2
+	 */
 	public void compareArray(int[] array1, int[] array2) {
 		int j;
 
@@ -165,6 +170,31 @@ public class Practice {
 
 		}
 
+	}
+
+	/**
+	 * program to find duplicate elements in an array.
+	 * 
+	 * @param array
+	 */
+	public int[] findDuplicate(int[] array) {
+		int value = 0;
+		int[] duplicate = new int[1000];
+
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 1; j < array.length; j++) {
+				if (i == j) {
+					continue;
+				}
+
+				if (array[i] == array[j]) {
+
+					duplicate[i] = array[i];
+
+				}
+			}
+		}
+		return duplicate;
 	}
 
 	/**
@@ -189,6 +219,64 @@ public class Practice {
 		}
 		return true;
 
+	}
+
+	/**
+	 * This method returns the list of duplicate elements in the input array.
+	 *
+	 * @param array
+	 */
+	public List<Integer> findDuplicates(int[] array) {
+		Vector<Integer> duplicates = new Vector<Integer>();
+		for (int i = 0; array != null && i < array.length; i++) {
+			for (int j = 0; j < array.length; j++) {
+				if (i == j) { // skip self.
+					continue;
+				}
+				if (array[i] == array[j]) {
+					if (duplicates.contains(array[i]) == false) {
+						duplicates.addElement(array[i]);
+					}
+				}
+			}
+		}
+		return (duplicates);
+
+	}
+
+	/**
+	 * This method returns the reversed version of the input array.
+	 *
+	 * @param array
+	 */
+	public void reverseArray(int[] array) {
+		for (int i = 0, j = array.length - 1; array != null && i < j; i++, j--) {
+			int temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+
+	}
+
+	/**
+	 * this method is to check whether a given string starts with the contents of
+	 * another string
+	 */
+	public boolean checkPrefix(String mainString, String prefix) {
+		int len1 = mainString.length();
+		int len2 = prefix.length();
+
+		if (len2 > len1) {
+			// Prefix can't be bigger than "main" string.
+			return (false);
+		}
+		for (int i = 0; i < len2; i++) {
+			if (mainString.charAt(i) != prefix.charAt(i)) {
+				return (false);
+			}
+		}
+
+		return true;
 	}
 
 	/**

@@ -3,6 +3,7 @@
  */
 package programming;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -43,7 +44,25 @@ public class PracticeDriver {
 		practice.compareArray(array1, array2);
 	}
 
-	private static void findDuplicate() {
+	public static void findFrequency() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter a String : ");
+		String str = scanner.nextLine();
+		System.out.print("");
+		System.out.print("");
+		System.out.print("");
+		System.out.println(
+				"-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("						HISTOGRAM OF FREQUENCY OF CHARECTERS IN A SENTENCE ");
+		System.out.println(
+				"------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println(" ");
+		
+		
+		Practice.findFrequency(str);
+	}
+
+	private static void findDuplicates() {
 
 		Practice practice = new Practice();
 		Scanner scanner = new Scanner(System.in);
@@ -58,10 +77,10 @@ public class PracticeDriver {
 
 			array[i] = scanner.nextInt();
 		}
-		int[] duplicate = practice.findDuplicate(array);
+		List<Integer> duplicate = practice.findDuplicates(array);
 		for (int i = 0; i < length; i++) {
 
-			System.out.print(duplicate[i]);
+			System.out.print(duplicate);
 		}
 	}
 
@@ -75,8 +94,7 @@ public class PracticeDriver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		checkPrefix();
-
+		findFrequency();
 	}
 
 }

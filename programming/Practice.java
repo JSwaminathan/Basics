@@ -1,9 +1,13 @@
 package programming;
 
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
+
+import com.sun.jdi.CharType;
 
 /**
  * @author ashwin
@@ -109,6 +113,76 @@ public class Practice {
 	}
 
 	/**
+	 * This method prints all numbers from 1 to the num passed by user.
+	 * 
+	 * @param num
+	 */
+	public void printNumbers(int num) {
+		// Repeatedly perform an action.
+		// For that use LOOP
+		// Same code is getting executed repeatedly.
+
+		int i = 1;
+		while (i <= num) {
+			System.out.println("Number: " + i);
+			i++; // equivalent of i = i + 1;
+		}
+
+		System.out.println("End of loop.");
+	}
+
+	public boolean isRainbow(String color) {
+
+		switch (color) {
+		case "violet":
+		case "indigo":
+		case "blue":
+		case "green":
+		case "yellow":
+		case "orange":
+		case "red":
+			return true;
+		default:
+			return false;
+		}
+
+	}
+
+	/**
+	 * 
+	 */
+	public static void findFrequency(String str) {
+
+		{
+			int i;
+
+			int counter[] = new int[256];
+
+			for (i = 0; i < str.length(); i++) {
+				if (str.charAt(i) == ' ') {
+					continue;
+				}
+				counter[(int) str.charAt(i)]++;
+			}
+			// Print Frequency of characters
+			for (i = 0; i < 256; i++) {
+				if (counter[i] != 0) {
+					// System.out.println("The character " + (char) i + " has occurred for " +
+					// counter[i] + " times");
+					
+					System.out.print((char) i + "   :  ");
+					for (int j = 0; j < counter[i]; j++) {
+						System.out.print("*");
+
+					}
+					System.out.println();
+
+				}
+			}
+		}
+	}
+
+	/**
 	 * returns the primes til given no
 	 * 
 	 * @param num
@@ -177,25 +251,11 @@ public class Practice {
 	 * 
 	 * @param array
 	 */
-	public int[] findDuplicate(int[] array) {
-		int value = 0;
-		int[] duplicate = new int[1000];
-
-		for (int i = 0; i < array.length; i++) {
-			for (int j = 1; j < array.length; j++) {
-				if (i == j) {
-					continue;
-				}
-
-				if (array[i] == array[j]) {
-
-					duplicate[i] = array[i];
-
-				}
-			}
-		}
-		return duplicate;
-	}
+	/**
+	 * This method returns the list of duplicate elements in the input array.
+	 *
+	 * @param array
+	 */
 
 	/**
 	 * to reverse string1 and if matches with string2 then return True else
@@ -226,6 +286,7 @@ public class Practice {
 	 *
 	 * @param array
 	 */
+
 	public List<Integer> findDuplicates(int[] array) {
 		Vector<Integer> duplicates = new Vector<Integer>();
 		for (int i = 0; array != null && i < array.length; i++) {

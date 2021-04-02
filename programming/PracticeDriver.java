@@ -57,9 +57,25 @@ public class PracticeDriver {
 		System.out.println(
 				"------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.println(" ");
-		
-		
+
 		Practice.findFrequency(str);
+	}
+
+	private static void getUniqueNumbers() {
+		Practice practice = new Practice();
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Enter size of array");
+
+		int length = scanner.nextInt();
+		int[] num1 = new int[length];
+
+		System.out.println("Enter the elements of the  array :");
+		for (int i = 0; i < length; i++) {
+
+			num1[i] = scanner.nextInt();
+		}
+		practice.getUniqueNumbers(num1);
 	}
 
 	private static void findDuplicates() {
@@ -77,16 +93,21 @@ public class PracticeDriver {
 
 			array[i] = scanner.nextInt();
 		}
-		List<Integer> duplicate = practice.findDuplicates(array);
-		for (int i = 0; i < length; i++) {
-
-			System.out.print(duplicate);
+		List<Integer> uniqueValues = practice.findDuplicates(array);
+		for (Integer value : uniqueValues) {
+			System.out.println(value + " ");
 		}
 	}
+	private static void checkSubString() {
+		String s1 = "Hello World";
+		String s2 = "Hello";
+		System.out.println((new Practice()).findSubString(s1, s2));
+	}
+	
 
 	private static void checkPrefix() {
 		String s1 = "Hello World";
-		String s2 = "World";
+		String s2 = "Hello";
 		System.out.println((new Practice()).checkPrefix(s1, s2));
 	}
 
@@ -94,7 +115,7 @@ public class PracticeDriver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		findFrequency();
+		PracticeDriver.checkSubString();
 	}
 
 }

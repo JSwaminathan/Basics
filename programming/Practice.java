@@ -1,13 +1,8 @@
 package programming;
 
-import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.Vector;
-
-import com.sun.jdi.CharType;
 
 /**
  * @author ashwin
@@ -15,18 +10,96 @@ import com.sun.jdi.CharType;
  */
 public class Practice {
 
-	public int getFactorial(int num) {
-		int fac = 1;
-		for (int i = 1; i <= num; i++) {
-			fac = fac * i;
-		}
-		return fac;
+	// N! = 1 * 2 * 3 * 4 * ... N
+	// 5! = 1 * 2 * 3 * 4 * 5
 
+	/**
+	 * Get the factorial of the given number
+	 * 
+	 * @param number
+	 * @return
+	 */
+	public int getFactorial(int number) {
+		// A: Initialization
+		// B: Condition
+		// C: Block / body of the for loop
+		// D: Increment / Decrement
+		int factorial = 1;
+		for (int i = 1; i <= number; i++) {
+			factorial = factorial * i;
+		}
+
+		return factorial;
+	}
+
+	/**
+	 * Method subsets compares two strings. Return 0 if both Strings are identical.
+	 * Return 1 if second String is a subset and begins with first String. Return 2
+	 * if second String is a subset and end with first String. -1 if none of the
+	 * above are true - i.e. the Strings are different.
+	 * 
+	 */
+
+	public int findSubString(String mainString, String subset) {
+		boolean result = checkPrefix(mainString, subset);
+		boolean resultSuffix = checkSuffix(mainString, subset);
+		if (mainString.length() < subset.length()) {
+			return -1;
+		}
+		if (mainString.contentEquals(subset)) {
+			return 0;
+		} else if (result == true) {
+			return (1);
+		} else if (resultSuffix == true) {
+			return 2;
+		} else {
+			return (-1);
+		}
+	}
+
+	/**
+	 * This method returns ALL the factorials for the FIRST N numbers. Example: If n
+	 * == 5 Returns array of [1 2 6 24 120 ]
+	 * 
+	 * @param n
+	 */
+	public int[] getNFactorials(int n) {
+		// Array is a contiguous set of values
+		// Several values of "Same" type then array is the basic choice.
+		// Array starts with index ZERO.
+
+		int[] array; // declaration
+		array = new int[50]; // instantiation -- with range 0 - 49
+
+		if (n > 50) {
+			System.err.println("Unable to calculate beyond 50!");
+			return null;
+		}
+
+		for (int i = 1; i <= n; i++) {
+			array[i - 1] = getFactorial(i);
+		}
+
+		return (array);
+	}
+
+	/**
+	 * This method returns a List of tokenized elements from a given String and set
+	 * of Delimiters. Example:"Port=881:Path=/home/jayaram","=:" Will return a list
+	 * of Port, 881, Path, /home/jayaram
+	 * 
+	 * Bonus: if second parameter is null, assume the delimiter is " " (space)
+	 * 
+	 * @param num
+	 * @return
+	 */
+	public List<String> tokenize(String str, String delimiters) {
+
+		return (null);
 	}
 
 	public String returnDate(int date) {
 
-		int number = date;
 		int digit = date % 10;
 		date = date / 10;
 
@@ -148,8 +221,56 @@ public class Practice {
 
 	}
 
+	// TODO
+	// STATUS : not working :(
+	public int[] getUniqueNumbers(int[] num1) {
+		int[] newarray = new int[100];
+		for (int i = 0; i < num1.length; i++) {
+			if (i == 0) {
+				newarray[i] = num1[i];
+				continue;
+			}
+			for (int j = 2; j < num1.length; j++) {
+				if (num1[i] == num1[j]) {
+					continue;
+				} else
+					newarray[i] = num1[i];
+
+			}
+
+		}
+		int k = 1;
+		for (int n = 0; k < num1.length; n++, k++) {
+			if (k == num1.length) {
+				break;
+			}
+			if (n == k) {
+				continue;
+			}
+			if (newarray[n] == num1[k]) {
+				continue;
+
+			}
+
+		}
+		int p = (num1.length - 1);
+		for (int n = 0; n < 1; n++) {
+			if (num1[(p - 1)] == num1[p]) {
+				continue;
+			} else {
+				// System.out.println((p-1)+" value of p-1");
+				newarray[p] = num1[p];
+			}
+
+		}
+		for (int q = 0; q < num1.length; q++) {
+			System.out.println(newarray[q]);
+		}
+		return newarray;
+	}
+
 	/**
-	 * 
+	 * this method prints a histogram of frequency of charecters
 	 */
 	public static void findFrequency(String str) {
 
@@ -169,7 +290,7 @@ public class Practice {
 				if (counter[i] != 0) {
 					// System.out.println("The character " + (char) i + " has occurred for " +
 					// counter[i] + " times");
-					
+
 					System.out.print((char) i + "   :  ");
 					for (int j = 0; j < counter[i]; j++) {
 						System.out.print("*");
@@ -333,6 +454,25 @@ public class Practice {
 		}
 		for (int i = 0; i < len2; i++) {
 			if (mainString.charAt(i) != prefix.charAt(i)) {
+				return (false);
+			}
+		}
+
+		return true;
+	}
+
+	public boolean checkSuffix(String mainString, String suffix) {
+		int len1 = mainString.length();
+		int len2 = suffix.length();
+		int length = suffix.length() - 1;
+		if (len2 > len1) {
+			// suffix can't be bigger than "main" string.
+			return (false);
+		}
+		System.out.println("Length " + len2);
+		
+		for (int i = 0; i < len2; length--,i++) {
+			if (mainString.charAt(length) != suffix.charAt(length)) {
 				return (false);
 			}
 		}

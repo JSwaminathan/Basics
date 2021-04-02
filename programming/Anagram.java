@@ -1,6 +1,6 @@
 package programming;
 
-import java.util.Scanner
+import java.util.Scanner;
 
 /**
  * Anagram

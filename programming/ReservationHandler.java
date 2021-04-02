@@ -7,7 +7,8 @@ import java.util.Random;
 /**
  * 
  * @author ashwi
- * Generic reservation handler class
+ * Generic reservation handler class.  
+ * This class support both reservation as well waitlisting capabilities.
  *
  */
 public class ReservationHandler {

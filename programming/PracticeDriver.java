@@ -43,6 +43,25 @@ public class PracticeDriver {
 		}
 		practice.compareArray(array1, array2);
 	}
+	private static void findSecondSmallestElement() {
+		int n=0;
+		Practice practice = new Practice();
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter size of array");
+
+		int length = scanner.nextInt();
+		int[] array1 = new int[length];
+
+		System.out.println("Enter the elements of  array 1:");
+		for (int i = 0; i < length; i++) {
+			array1[i] = scanner.nextInt();
+		}
+		System.out.println("Enter the nth term");
+	 n = scanner.nextInt();
+		
+		int element =practice.findSecondSmallestElement(array1,n);
+		 System.out.println(" second smallest element present in given array: " + element); 
+	}
 
 	public static void findFrequency() {
 		Scanner scanner = new Scanner(System.in);
@@ -115,7 +134,7 @@ public class PracticeDriver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		PracticeDriver.checkSubString();
+		PracticeDriver.findSecondSmallestElement();
 	}
 
 }

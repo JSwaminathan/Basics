@@ -31,6 +31,30 @@ public class Practice {
 
 		return factorial;
 	}
+	/**
+	 *  this method reurns the second smallest element in an array
+	 * @param array1
+	 * @return
+	 */
+	public int findSecondSmallestElement(int[] array1,int n) {
+		int temp; 
+		n=n-1;
+		
+		for (int i = 0; i < array1.length; i++)   
+		        {  
+		            for (int j = i + 1; j < array1.length; j++)   
+		            {  
+		                if (array1[i] > array1[j])   
+		                {  
+		                    temp = array1[i];  
+		                    array1[i] = array1[j];  
+		                    array1[j] = temp;  
+		                }  
+		            }  
+		        }  
+		     //  return array1[1];
+		 return array1[n];
+	}
 
 	/**
 	 * Method subsets compares two strings. Return 0 if both Strings are identical.

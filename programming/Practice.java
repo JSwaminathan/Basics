@@ -336,7 +336,7 @@ public class Practice {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array2.length; j++) {
 				if ((array[i] + array2[j] )== num) {
-					System.out.println(array[i]+""+array[j]);
+					System.out.println(array[i]+""+array2[j]);
 
 				}else 
 					continue;

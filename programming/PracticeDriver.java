@@ -4,6 +4,7 @@
 package programming;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -20,6 +21,36 @@ public class PracticeDriver {
 		int mark = scanner.nextInt();
 		practice.printList(mark);
 	}
+	private static int[] returnNewArray() {
+		Scanner scanner =new Scanner(System.in);
+		System.out.println("Enter size of array  :");
+
+		int length = scanner.nextInt();
+		int[] num1 = new int[length];
+
+		System.out.println("Enter the elements of the  array :");
+		for (int i = 0; i < length; i++) {
+
+			num1[i] = scanner.nextInt();
+		}
+		
+	
+		return num1;
+	}
+	private static void findSumOfDistinctElements() {
+		Scanner scanner =new Scanner(System.in);
+		Practice prac =new Practice();
+		int array[]=null;
+		int array2[]=null;
+		 array=returnNewArray();
+		 array2 = returnNewArray();
+		 System.out.println("enter the number for elemets to be equal");
+		 int num=scanner.nextInt();
+		prac.findSumOfDistinctElements(array,array2,num);
+		
+	}
+	
+	
 
 	private static void compareArray() {
 		Practice practice = new Practice();
@@ -67,6 +98,10 @@ public class PracticeDriver {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter a String : ");
 		String str = scanner.nextLine();
+		System.out.println("enter the second string ");
+		String str2=scanner.nextLine();
+		
+		
 		System.out.print("");
 		System.out.print("");
 		System.out.print("");
@@ -77,7 +112,7 @@ public class PracticeDriver {
 				"------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.println(" ");
 
-		Practice.findFrequency(str);
+		Practice.findFrequency(str,str2);
 	}
 
 	private static void getUniqueNumbers() {
@@ -134,7 +169,6 @@ public class PracticeDriver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		PracticeDriver.findSecondSmallestElement();
+		findSumOfDistinctElements();
 	}
-
 }

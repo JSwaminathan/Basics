@@ -31,29 +31,28 @@ public class Practice {
 
 		return factorial;
 	}
+
 	/**
-	 *  this method reurns the second smallest element in an array
+	 * this method reurns the second smallest element in an array
+	 * 
 	 * @param array1
 	 * @return
 	 */
-	public int findSecondSmallestElement(int[] array1,int n) {
-		int temp; 
-		n=n-1;
-		
-		for (int i = 0; i < array1.length; i++)   
-		        {  
-		            for (int j = i + 1; j < array1.length; j++)   
-		            {  
-		                if (array1[i] > array1[j])   
-		                {  
-		                    temp = array1[i];  
-		                    array1[i] = array1[j];  
-		                    array1[j] = temp;  
-		                }  
-		            }  
-		        }  
-		     //  return array1[1];
-		 return array1[n];
+	public int findSecondSmallestElement(int[] array1, int n) {
+		int temp;
+		n = n - 1;
+
+		for (int i = 0; i < array1.length; i++) {
+			for (int j = i + 1; j < array1.length; j++) {
+				if (array1[i] > array1[j]) {
+					temp = array1[i];
+					array1[i] = array1[j];
+					array1[j] = temp;
+				}
+			}
+		}
+		// return array1[1];
+		return array1[n];
 	}
 
 	/**
@@ -293,10 +292,7 @@ public class Practice {
 		return newarray;
 	}
 
-	/**
-	 * this method prints a histogram of frequency of charecters
-	 */
-	public static void findFrequency(String str) {
+	public static void findFrequency(String str, String str2) {
 
 		{
 			int i;
@@ -312,12 +308,10 @@ public class Practice {
 			// Print Frequency of characters
 			for (i = 0; i < 256; i++) {
 				if (counter[i] != 0) {
-					// System.out.println("The character " + (char) i + " has occurred for " +
-					// counter[i] + " times");
 
-					System.out.print((char) i + "   :  ");
+					System.out.print((char) i + "   : has occoured " + counter[i] + "  times ");
 					for (int j = 0; j < counter[i]; j++) {
-						System.out.print("*");
+						// System.out.print(" "+counter[i] );
 
 					}
 					System.out.println();
@@ -328,11 +322,31 @@ public class Practice {
 	}
 
 	/**
+	 * this method prints a histogram of frequency of charecters
+	 */
+
+	/**
 	 * returns the primes til given no
 	 * 
 	 * @param num
 	 * @return
 	 */
+	public void findSumOfDistinctElements(int array[], int array2[], int num) {
+
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array2.length; j++) {
+				if ((array[i] + array2[j] )== num) {
+					System.out.println(array[i]+""+array[j]);
+
+				}else 
+					continue;
+
+			}
+
+		}
+
+	}
+
 	public int[] getPrimes(int num) {
 		int[] primes = new int[1000];
 		int count = 0;
@@ -494,8 +508,8 @@ public class Practice {
 			return (false);
 		}
 		System.out.println("Length " + len2);
-		
-		for (int i = 0; i < len2; length--,i++) {
+
+		for (int i = 0; i < len2; length--, i++) {
 			if (mainString.charAt(length) != suffix.charAt(length)) {
 				return (false);
 			}

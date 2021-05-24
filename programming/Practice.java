@@ -331,14 +331,32 @@ public class Practice {
 	 * @param num
 	 * @return
 	 */
+	public void findDuplicate(String array[]) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 1; j < array.length; j++) {
+				if (i == j) {
+					// System.out.println("duplicate found :" + array[j]);
+					continue;
+				}
+				else if(array[i].equalsIgnoreCase(array[j])) {
+					 System.out.println("duplicate found :" + array[j]);
+					
+				}
+				else
+					continue;
+			}
+
+		}
+	}
+
 	public void findSumOfDistinctElements(int array[], int array2[], int num) {
 
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array2.length; j++) {
-				if ((array[i] + array2[j] )== num) {
-					System.out.println(array[i]+""+array2[j]);
+				if ((array[i] + array2[j]) == num) {
+					System.out.println(array[i] + "" + array2[j]);
 
-				}else 
+				} else
 					continue;
 
 			}
@@ -420,6 +438,21 @@ public class Practice {
 	 * to reverse string1 and if matches with string2 then return True else
 	 * false......
 	 */
+	public void compareArrayString(String[] array1, String[] array2) {
+		
+		for (int i = 0; i < array1.length; i++) {
+		
+			for (int j=0; j < array2.length; j++) {
+				
+				 if(array1[i].equalsIgnoreCase(array2[j])) {
+					 System.out.println("commen element found :" + array2[j]);
+					
+				}
+			}
+
+		}
+
+	}
 	public boolean reverseCompare(String string1, String string2) {
 		// for example str1 = hello and str2 = ol
 		if (string1.length() != string2.length()) {

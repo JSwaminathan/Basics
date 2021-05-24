@@ -164,11 +164,55 @@ public class PracticeDriver {
 		String s2 = "Hello";
 		System.out.println((new Practice()).checkPrefix(s1, s2));
 	}
+	private static void findCommen() {
+		Practice prac =new Practice();
+		Scanner scanner =new Scanner(System.in);
+		System.out.println("Enter size of array :");
+
+		int length = scanner.nextInt();
+		String[] array = new String[length];
+
+		System.out.println("Enter the elements of the  array :");
+		for (int i = 0; i < length; i++) {
+
+			array[i] = scanner.next();
+		}
+		System.out.println("Enter size of array :");
+
+		int len2 = scanner.nextInt();
+		String[] array2 = new String[len2];
+
+		System.out.println("Enter the elements of the  array :");
+		for (int i = 0; i < len2; i++) {
+
+			array2[i] = scanner.next();
+		}
+		prac.compareArrayString(array, array2);
+	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		findSumOfDistinctElements();
+		findCommen();
+	}
+	private static void findDuplicate() {
+		Practice prac =new Practice();
+		Scanner scanner =new Scanner(System.in);
+		System.out.println("Enter size of array  :");
+
+		int length = scanner.nextInt();
+		String[] array = new String[length];
+
+		System.out.println("Enter the elements of the  array :");
+		for (int i = 0; i < length; i++) {
+
+			array[i] = scanner.next();
+		}
+		prac.findDuplicate(array);
+		
+		
+	
+		
 	}
 }

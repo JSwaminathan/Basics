@@ -86,7 +86,7 @@ public class LinkedList {
 	 * 
 	 * @return
 	 */
-	public int xyz() {
+	public int deleteEnd() {
 		if (head == null) {
 			return (-1);
 		}
@@ -105,24 +105,7 @@ public class LinkedList {
 		
 		return (value);
 	}
-	public int deleteEnd() {
-		int value=tail.value;
-		if (head == null) {
-			return (-1);
-		}
-		if (head == tail) { // single node case
-			return (deleteFirst());
-		}
-		
-		  Node second_last = head;
-	        while (second_last.next.next != null)
-	            second_last = second_last.next;
-	 
-	        // Change next of second last
-	        second_last.next = null;
-	 
-	        return value;
-	}
+	
 
 	public void print() {
 		for (Node node = head; node != null; node = node.next) {

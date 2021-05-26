@@ -5,8 +5,8 @@ package programming;
 
 public class Driver {
 	public static void main(String[] args) {
-		//testTree();
-		testLinkedList();
+		testTree();
+		//testLinkedList();
 	}
 
 	private static void testTree() {
@@ -22,11 +22,15 @@ public class Driver {
 		tree.print();
 		
 		if (tree.exists("Arjun")) {
-			System.out.println("Found #1");
+			System.out.println("Found #1" + " PASSED. ");
+		} else {
+			System.out.println("Did not find #1" + " FAILED. ");
 		}
 		
 		if (tree.exists("Random")  == false) {
-			System.out.print("Did not Found #2");
+			System.out.print("Did not find #2 - PASSED");
+		} else {
+			System.out.println("Did not find #2 " + " FAILED. ");
 		}
 	}
 	

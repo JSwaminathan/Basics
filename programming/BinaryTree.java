@@ -3,29 +3,29 @@ package programming;
  * Binary Tree
  */
 public class BinaryTree <T extends Comparable<T>> {
-	protected Node<T> root;
+	protected TreeNode<T> root;
 	
 	public void addNode(T value) {
 		root = addNode(root, value);
 		
 	}
 	
-	private Node<T> addNode(Node<T> node, T value) {
-		if (node == null) {
-			node = new Node<T>();
-			node.setValue(value);
-			return node;
+	private TreeNode<T> addNode(TreeNode<T> TreeNode, T value) {
+		if (TreeNode == null) {
+			TreeNode = new TreeNode<T>();
+			TreeNode.setValue(value);
+			return TreeNode;
 		}
 		
 		
-        if (value.compareTo(node.getValue()) > 0) {
-			node.right = addNode(node.right, value);
+        if (value.compareTo(TreeNode.getValue()) > 0) {
+			TreeNode.right = addNode(TreeNode.right, value);
 		}
-        else if (value.compareTo(node.getValue()) < 0) {
-			node.left = addNode(node.left, value);
+        else if (value.compareTo(TreeNode.getValue()) < 0) {
+			TreeNode.left = addNode(TreeNode.left, value);
 		} 
         // equal
-        return (node);
+        return (TreeNode);
 			
 	}
 	
@@ -33,33 +33,33 @@ public class BinaryTree <T extends Comparable<T>> {
 	   print(root);	
 	}
 	
-	public void print(Node <T> node) {
-		if (node == null) {
+	public void print(TreeNode <T> TreeNode) {
+		if (TreeNode == null) {
 			return;
 		}
-		print(node.getLeft());
-		System.out.println("Value: " + node.getValue());
-		print(node.getRight());
+		print(TreeNode.getLeft());
+		System.out.println("Value: " + TreeNode.getValue());
+		print(TreeNode.getRight());
 	}
 
 	public boolean exists(T value) {
 		return (exists(root, value));
 	}
 
-	private boolean exists(Node<T> node, T value) {
-		if (node == null) {
+	private boolean exists(TreeNode<T> TreeNode, T value) {
+		if (TreeNode == null) {
 		    return false;
 		}
 		
-		if (node.getValue().compareTo(value) == 0) {
+		if (TreeNode.getValue().compareTo(value) == 0) {
 			return (true);
 		}
 		
-		if (exists(node.getLeft(), value)) {
+		if (exists(TreeNode.getLeft(), value)) {
 			return (true);
 		}
 		
-		if (exists(node.getRight(), value)) {
+		if (exists(TreeNode.getRight(), value)) {
 			return (true);
 		}
 		

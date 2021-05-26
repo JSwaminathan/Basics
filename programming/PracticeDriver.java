@@ -13,6 +13,29 @@ import java.util.Scanner;
  */
 public class PracticeDriver {
 
+	private static void testMatrixAddition() {
+		MatrixOperations mo = new MatrixOperations();
+
+		Matrix m1 = new Matrix(3, 3);// size of matrix 3 X 3
+		Matrix m2 = new Matrix(3, 3);
+
+		int row = m1.getRowCount();
+		int col = m1.getColCount();
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++) {
+				m1.setValue(i, j, i + j);
+			}
+
+		}
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++) {
+				m2.setValue(i, j, i + j+25);
+			}
+		}
+		Matrix sum = mo.addMatrices(m1, m2);
+		mo.printMatrix(sum);
+	}
+
 	private static void testPrintList() {
 		Practice practice = new Practice();
 
@@ -21,8 +44,9 @@ public class PracticeDriver {
 		int mark = scanner.nextInt();
 		practice.printList(mark);
 	}
+
 	private static int[] returnNewArray() {
-		Scanner scanner =new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter size of array  :");
 
 		int length = scanner.nextInt();
@@ -33,24 +57,22 @@ public class PracticeDriver {
 
 			num1[i] = scanner.nextInt();
 		}
-		
-	
+
 		return num1;
 	}
+
 	private static void findSumOfDistinctElements() {
-		Scanner scanner =new Scanner(System.in);
-		Practice prac =new Practice();
-		int array[]=null;
-		int array2[]=null;
-		 array=returnNewArray();
-		 array2 = returnNewArray();
-		 System.out.println("enter the number for elemets to be equal");
-		 int num=scanner.nextInt();
-		prac.findSumOfDistinctElements(array,array2,num);
-		
+		Scanner scanner = new Scanner(System.in);
+		Practice prac = new Practice();
+		int array[] = null;
+		int array2[] = null;
+		array = returnNewArray();
+		array2 = returnNewArray();
+		System.out.println("enter the number for elemets to be equal");
+		int num = scanner.nextInt();
+		prac.findSumOfDistinctElements(array, array2, num);
+
 	}
-	
-	
 
 	private static void compareArray() {
 		Practice practice = new Practice();
@@ -74,8 +96,9 @@ public class PracticeDriver {
 		}
 		practice.compareArray(array1, array2);
 	}
+
 	private static void findSecondSmallestElement() {
-		int n=0;
+		int n = 0;
 		Practice practice = new Practice();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter size of array");
@@ -88,10 +111,10 @@ public class PracticeDriver {
 			array1[i] = scanner.nextInt();
 		}
 		System.out.println("Enter the nth term");
-	 n = scanner.nextInt();
-		
-		int element =practice.findSecondSmallestElement(array1,n);
-		 System.out.println(" second smallest element present in given array: " + element); 
+		n = scanner.nextInt();
+
+		int element = practice.findSecondSmallestElement(array1, n);
+		System.out.println(" second smallest element present in given array: " + element);
 	}
 
 	public static void findFrequency() {
@@ -99,9 +122,8 @@ public class PracticeDriver {
 		System.out.print("Enter a String : ");
 		String str = scanner.nextLine();
 		System.out.println("enter the second string ");
-		String str2=scanner.nextLine();
-		
-		
+		String str2 = scanner.nextLine();
+
 		System.out.print("");
 		System.out.print("");
 		System.out.print("");
@@ -112,7 +134,7 @@ public class PracticeDriver {
 				"------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.println(" ");
 
-		Practice.findFrequency(str,str2);
+		Practice.findFrequency(str, str2);
 	}
 
 	private static void getUniqueNumbers() {
@@ -152,21 +174,22 @@ public class PracticeDriver {
 			System.out.println(value + " ");
 		}
 	}
+
 	private static void checkSubString() {
 		String s1 = "Hello World";
 		String s2 = "Hello";
 		System.out.println((new Practice()).findSubString(s1, s2));
 	}
-	
 
 	private static void checkPrefix() {
 		String s1 = "Hello World";
 		String s2 = "Hello";
 		System.out.println((new Practice()).checkPrefix(s1, s2));
 	}
+
 	private static void findCommen() {
-		Practice prac =new Practice();
-		Scanner scanner =new Scanner(System.in);
+		Practice prac = new Practice();
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter size of array :");
 
 		int length = scanner.nextInt();
@@ -194,11 +217,12 @@ public class PracticeDriver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		findCommen();
+		testMatrixAddition();
 	}
+
 	private static void findDuplicate() {
-		Practice prac =new Practice();
-		Scanner scanner =new Scanner(System.in);
+		Practice prac = new Practice();
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter size of array  :");
 
 		int length = scanner.nextInt();
@@ -210,9 +234,6 @@ public class PracticeDriver {
 			array[i] = scanner.next();
 		}
 		prac.findDuplicate(array);
-		
-		
-	
-		
+
 	}
 }

@@ -31,7 +31,7 @@ public class Driver {
 	}
 	
 	private static void testLinkedList() {
-		LinkedList<String> llist = new LinkedList<String>();
+		SingleLinkedList<String> llist = new SingleLinkedList<String>();
 		
 		llist.addNode("Meena");
 		llist.addNode("Jayaram");

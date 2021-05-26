@@ -8,8 +8,8 @@ package programming;
  */
 public class LinkedList {
 
-	private Node head;
-	private Node tail;
+	private LLNode head;
+	private LLNode tail;
 
 	/**
 	 * Insert at the tail of the list.
@@ -18,17 +18,17 @@ public class LinkedList {
 	 */
 	public void insertEnd(int value) {
 		if (head == null) {
-			firstNode(value);
+			firstLLNode(value);
 			return;
 		}
 
-		// Create a node
-		Node node = new Node();
-		node.value = value;
-		node.next = null;
+		// Create a LLNode
+		LLNode LLNode = new LLNode();
+		LLNode.value = value;
+		LLNode.next = null;
 
-		tail.next = node; // The previous last element must point to the new node.
-		tail = node;
+		tail.next = LLNode; // The previous last element must point to the new LLNode.
+		tail = LLNode;
 	}
 
 	/**
@@ -38,23 +38,23 @@ public class LinkedList {
 	 */
 	public void insertFirst(int value) {
 		if (head == null) {
-			firstNode(value);
+			firstLLNode(value);
 			return;
 		}
-		Node node = new Node();
-		node.value = value;
-		node.next = head;
-		head = node;
+		LLNode LLNode = new LLNode();
+		LLNode.value = value;
+		LLNode.next = head;
+		head = LLNode;
 	}
 
-	private void firstNode(int value) {
+	private void firstLLNode(int value) {
 
 		// Coming for first time.
-		Node node = new Node();
-		node.value = value;
-		node.next = null;
+		LLNode LLNode = new LLNode();
+		LLNode.value = value;
+		LLNode.next = null;
 
-		head = tail = node;
+		head = tail = LLNode;
 		return;
 
 	}
@@ -72,7 +72,7 @@ public class LinkedList {
 		}
 
 		int headVal = head.value;
-		if (head == tail) {// there is only a single node
+		if (head == tail) {// there is only a single LLNode
 			head = tail = null;
 
 		} else {
@@ -90,26 +90,26 @@ public class LinkedList {
 		if (head == null) {
 			return (-1);
 		}
-		if (head == tail) { // single node case
+		if (head == tail) { // single LLNode case
 			return (deleteFirst());
 		}
 		
-		Node prevNode = head;
+		LLNode prevLLNode = head;
 		
-		for (Node node = head.next; node.next != null; node = node.next) {
-			prevNode = node;
+		for (LLNode LLNode = head.next; LLNode.next != null; LLNode = LLNode.next) {
+			prevLLNode = LLNode;
 		}
 		int value = tail.value;
-		prevNode.next = null;
-		tail = prevNode;
+		prevLLNode.next = null;
+		tail = prevLLNode;
 		
 		return (value);
 	}
 	
 
 	public void print() {
-		for (Node node = head; node != null; node = node.next) {
-			System.out.println("Value: " + node.value);
+		for (LLNode LLNode = head; LLNode != null; LLNode = LLNode.next) {
+			System.out.println("Value: " + LLNode.value);
 		}
 
 	}

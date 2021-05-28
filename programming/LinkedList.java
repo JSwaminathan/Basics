@@ -86,6 +86,7 @@ public class LinkedList {
 	 * 
 	 * @return
 	 */
+	
 	public int deleteEnd() {
 		if (head == null) {
 			throw new RuntimeException("Empty LL");

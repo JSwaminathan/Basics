@@ -1,5 +1,10 @@
 package programming;
 
+/**
+ * Stack that works on Linked List.
+ * @author ashwi
+ *
+ */
 public class Stack extends LinkedList {
 
 	public void push(int value) {
@@ -19,8 +24,7 @@ public class Stack extends LinkedList {
 		if (tail == null) {
 			throw new RuntimeException("Empty Stack");
 		}
-//hi
-		//ieef
+		
 		return (tail.value);
 	}
 

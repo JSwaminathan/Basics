@@ -19,6 +19,19 @@ public class Practice {
 	 * @param number
 	 * @return
 	 */
+	public void printLeaders(int arr[]) {
+		int j;
+		for (int i = 0; i < arr.length - 1; i++) {
+
+			for (j = i + 1; j < arr.length; j++) {
+				if (arr[i] <= arr[j])
+					break;
+			}
+			if (j == arr.length)
+				System.out.print(arr[i] + "  ");
+		}
+	}
+
 	public int getFactorial(int number) {
 		// A: Initialization
 		// B: Condition
@@ -337,12 +350,10 @@ public class Practice {
 				if (i == j) {
 					// System.out.println("duplicate found :" + array[j]);
 					continue;
-				}
-				else if(array[i].equalsIgnoreCase(array[j])) {
-					 System.out.println("duplicate found :" + array[j]);
-					
-				}
-				else
+				} else if (array[i].equalsIgnoreCase(array[j])) {
+					System.out.println("duplicate found :" + array[j]);
+
+				} else
 					continue;
 			}
 
@@ -439,20 +450,21 @@ public class Practice {
 	 * false......
 	 */
 	public void compareArrayString(String[] array1, String[] array2) {
-		
+
 		for (int i = 0; i < array1.length; i++) {
-		
-			for (int j=0; j < array2.length; j++) {
-				
-				 if(array1[i].equalsIgnoreCase(array2[j])) {
-					 System.out.println("commen element found :" + array2[j]);
-					
+
+			for (int j = 0; j < array2.length; j++) {
+
+				if (array1[i].equalsIgnoreCase(array2[j])) {
+					System.out.println("commen element found :" + array2[j]);
+
 				}
 			}
 
 		}
 
 	}
+
 	public boolean reverseCompare(String string1, String string2) {
 		// for example str1 = hello and str2 = ol
 		if (string1.length() != string2.length()) {

@@ -29,7 +29,7 @@ public class PracticeDriver {
 		}
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				m2.setValue(i, j, i + j+25);
+				m2.setValue(i, j, i + j + 25);
 			}
 		}
 		Matrix sum = mo.addMatrices(m1, m2);
@@ -45,7 +45,7 @@ public class PracticeDriver {
 		practice.printList(mark);
 	}
 
-	private static int[] returnNewArray() {
+	public static int[] returnNewArray() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter size of array  :");
 
@@ -59,6 +59,13 @@ public class PracticeDriver {
 		}
 
 		return num1;
+	}
+
+	private static void printLeaders() {
+		Practice prac = new Practice();
+		int arr[] = returnNewArray();
+		prac.printLeaders(arr);
+
 	}
 
 	private static void findSumOfDistinctElements() {
@@ -217,7 +224,7 @@ public class PracticeDriver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		testMatrixAddition();
+		printLeaders();
 	}
 
 	private static void findDuplicate() {

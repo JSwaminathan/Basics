@@ -8,8 +8,8 @@ package programming;
  */
 public class LinkedList {
 
-	private LLNode head;
-	private LLNode tail;
+	protected LLNode head;
+	protected LLNode tail;
 
 	/**
 	 * Insert at the tail of the list.
@@ -88,7 +88,7 @@ public class LinkedList {
 	 */
 	public int deleteEnd() {
 		if (head == null) {
-			return (-1);
+			throw new RuntimeException("Empty LL");
 		}
 		if (head == tail) { // single LLNode case
 			return (deleteFirst());
@@ -108,8 +108,8 @@ public class LinkedList {
 	
 
 	public void print() {
-		for (LLNode LLNode = head; LLNode != null; LLNode = LLNode.next) {
-			System.out.println("Value: " + LLNode.value);
+		for (LLNode node = head; node != null; node = node.next) {
+			System.out.println("Value: " + node.value);
 		}
 
 	}

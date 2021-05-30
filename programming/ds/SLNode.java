@@ -1,4 +1,4 @@
-package programming;
+package programming.ds;
 
 /**
  * LinkedList Node 

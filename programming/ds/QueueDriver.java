@@ -1,6 +1,4 @@
-package programming;
-
-import programming.PriorityQueue.Priority;
+package programming.ds;
 
 public class QueueDriver {
 

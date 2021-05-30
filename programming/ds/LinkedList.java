@@ -1,4 +1,4 @@
-package programming;
+package programming.ds;
 
 /**
  * A Single link list DS with basic operations.
@@ -86,7 +86,7 @@ public class LinkedList {
 	 * 
 	 * @return
 	 */
-	
+
 	public int deleteEnd() {
 		if (head == null) {
 			throw new RuntimeException("Empty LL");
@@ -94,19 +94,18 @@ public class LinkedList {
 		if (head == tail) { // single LLNode case
 			return (deleteFirst());
 		}
-		
+
 		LLNode prevLLNode = head;
-		
+
 		for (LLNode LLNode = head.next; LLNode.next != null; LLNode = LLNode.next) {
 			prevLLNode = LLNode;
 		}
 		int value = tail.value;
 		prevLLNode.next = null;
 		tail = prevLLNode;
-		
+
 		return (value);
 	}
-	
 
 	public void print() {
 		for (LLNode node = head; node != null; node = node.next) {
@@ -115,4 +114,12 @@ public class LinkedList {
 
 	}
 
+	public int size() {
+		int count = 0;
+		for (LLNode node = head; node != null; node = node.next) {
+			count++;
+		}
+
+		return (count);
+	}
 }

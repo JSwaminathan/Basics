@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Vector;
 
+import javax.management.RuntimeErrorException;
+
 /**
  * @author ashwin
  *
@@ -30,6 +32,34 @@ public class Practice {
 			if (j == arr.length)
 				System.out.print(arr[i] + "  ");
 		}
+	}
+
+	/**
+	 * method to cyclically rotate a given array clockwise by 'n' elements
+	 * 
+	 * @param number
+	 * @return
+	 */
+	public int[] rotateClockWise(int array[], int rotate) {
+		int newNum = 0;
+		PracticeDriver driver = new PracticeDriver();
+		int[] newArray = new int[array.length];
+		if (rotate > array.length) {
+			throw new RuntimeErrorException(null, "no of rotates is greater than size of array");
+		}
+		int len = array.length - 1;
+		for (int i = 0; i < rotate; i++, len--) {
+			int temp = array[i];
+			array[i] = array[len];
+			// System.out.println(temp);
+			array[len] = array[temp];
+
+		}
+		for (int i = rotate; i < array.length - rotate; i++) {
+			array[i] = newArray[i];
+		}
+
+		return array;
 	}
 
 	public int getFactorial(int number) {

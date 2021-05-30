@@ -68,6 +68,20 @@ public class PracticeDriver {
 
 	}
 
+	public static void rotateClockWise() {
+		int array[] = returnNewArray();
+		System.out.println("Enter number of rotates to be made ");
+		Scanner scanner = new Scanner(System.in);
+		int rotate = scanner.nextInt();
+
+		Practice prac = new Practice();
+	int returnedArray[]	=prac.rotateClockWise(array, rotate);
+	for(int i=0;i<returnedArray.length;i++) {
+		System.out.println(returnedArray[i]);
+	}
+
+	}
+
 	private static void findSumOfDistinctElements() {
 		Scanner scanner = new Scanner(System.in);
 		Practice prac = new Practice();
@@ -224,7 +238,7 @@ public class PracticeDriver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		printLeaders();
+		rotateClockWise();
 	}
 
 	private static void findDuplicate() {

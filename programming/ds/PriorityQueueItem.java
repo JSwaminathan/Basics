@@ -1,6 +1,6 @@
-package programming;
+package programming.ds;
 
-import programming.PriorityQueue.Priority;
+import programming.ds.PriorityQueue.Priority;
 
 public class PriorityQueueItem extends QueueItem {
 

@@ -1,9 +1,9 @@
-package programming;
+package programming.ds;
 /**
  * Driver
  */
 
-public class Driver {
+public class DSTestCases {
 	public static void main(String[] args) {
 		testTree();
 		//testLinkedList();

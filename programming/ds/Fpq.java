@@ -1,4 +1,4 @@
-package programming;
+package programming.ds;
 
 /**
  * Create a queue with flexible priorities , for eg : priorities ranging from p1

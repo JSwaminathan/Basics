@@ -7,15 +7,37 @@
 	<resultMap id="result" type="com.jaa.schoolmgmt.Student">
 		<result property="id" column="ID" />
 	</resultMap>
+	
+	<resultMap id="marks" type="com.jaa.schoolmgmt.Marks">
+	</resultMap>
 
 	<select id="getAll" resultMap="result">
 		SELECT * FROM STUDENT;
 	</select>
 
 	<select id="getById" parameterType="int" resultMap="result">
-		SELECT * FROM
-		STUDENT WHERE ID = #{id};
+		SELECT * FROM  STUDENT WHERE ID = #{id};
 	</select>
+
+	<select  id="getStudentInfo" parameterType="int" resultMap="marks">
+		select student.ID,name,english,maths,physics,chemistry,biology from student,student_marks where student.id=student_marks.id;
+	</select>
+	
+	
+	<select id="getAvg"  resultMap="marks">
+		select avg(english) as"english", avg(maths) as"maths",avg(chemistry) as"chemistry",avg(physics) as"physics",avg(biology) as"biology" from student_marks;
+		
+	</select>
+
+	<select id="getMax"  resultMap="marks">
+		select max(english) as"english", max(maths) as"maths",max(chemistry) as"chemistry",max(physics) as"physics", max(biology) as"biology" from student_marks;
+
+	</select>
+	<select id="getMin"  resultMap="marks">
+		select min(english) as"english", min(maths) as"maths",min(chemistry) as"chemistry",min(physics) as"physics", min(biology) as"biology" from student_marks;
+
+	</select>
+
 
 	<update id="updateStudent"
 		parameterType="com.jaa.schoolmgmt.Student">
@@ -30,6 +52,10 @@
 		(#{id}, #{name},
 		#{phone}, #{email});
 	</insert>
+<<<<<<< HEAD
       </  
 
+=======
+	
+>>>>>>> 252c695abbbca4bf7728c5a54a03a1d9e30b4992
 </mapper>

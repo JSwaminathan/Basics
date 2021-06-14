@@ -1,4 +1,4 @@
-package programming;
+package programming.ds;
 
 public class QueueItem {
 	private Object value;

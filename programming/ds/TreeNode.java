@@ -1,29 +1,27 @@
-package programming;
+package programming.ds;
 
-/**
- *  Node
- */
-public class Node<T extends Comparable<T>> {
+
+public class TreeNode<T extends Comparable<T>> {
 	protected T value;
-	Node<T> left;
-	Node<T> right;
-	
+	TreeNode<T> left;
+	TreeNode<T> right;
+
 	public T getValue() {
 		return value;
 	}
 	public void setValue(T value) {
 		this.value = value;
 	}
-	public Node<T> getLeft() {
+	public TreeNode<T> getLeft() {
 		return left;
 	}
-	public void setLeft(Node<T> left) {
+	public void setLeft(TreeNode<T> left) {
 		this.left = left;
 	}
-	public Node<T> getRight() {
+	public TreeNode<T> getRight() {
 		return right;
 	}
-	public void setRight(Node<T> right) {
+	public void setRight(TreeNode<T> right) {
 		this.right = right;
 	}
 	public String toString() {

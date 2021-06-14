@@ -1,4 +1,4 @@
-package programming;
+package programming.ds;
 
 /**
  * This class maintains a "prioritized" list of items. With same priority the

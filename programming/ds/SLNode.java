@@ -1,11 +1,11 @@
-package programming;
+package programming.ds;
 
 /**
  * LinkedList Node 
  */
-public class LLNode <T extends Comparable<T>> {
+public class SLNode <T extends Comparable<T>> {
 	private T value;
-	protected LLNode<T> next;
+	protected SLNode<T> next;
 	
 	public T getValue() {
 		return value;
@@ -13,10 +13,10 @@ public class LLNode <T extends Comparable<T>> {
 	public void setValue(T value) {
 		this.value = value;
 	}
-	public LLNode<T> getNext() {
+	public SLNode<T> getNext() {
 		return next;
 	}
-	public void setNext(LLNode<T> next) {
+	public void setNext(SLNode<T> next) {
 		this.next = next;
 	}
 	

@@ -26,4 +26,48 @@ public class Practice {
 		}
 		return arr1;
 	}
+
+	public static int[] getFrequency(int arr[], int size) {
+		
+		int frequency[] = new int[size];
+		for (int i = 0; i < size; i++) {
+			for (int j = i + 1; j < size; j++) {
+				if (i == j)
+					continue;
+
+				else if (arr[i] == arr[j]) {
+					frequency[i] = arr[j];
+
+				}
+
+			}
+		}
+		return frequency;
+
+	}
+	
+	public int getMax(int[] arr1) {
+
+		int maxValue = arr1[0];
+
+		for (int i = 1; i < arr1.length; i++) {
+			if (arr1[i] > maxValue) {
+				maxValue = arr1[i];
+			}
+		}
+		return maxValue;
+
+	}
+
+	public int getMin(int[] arr1) {
+
+		int minValue = arr1[0];
+
+		for (int i = 1; i < arr1.length; i++) {
+			if (arr1[i] < minValue) {
+				minValue = arr1[i];
+			}
+		}
+		return minValue;
+	}
 }

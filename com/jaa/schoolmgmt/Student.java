@@ -8,6 +8,9 @@ public class Student {
 	private String name;
 	private String email;
 	private String phone;
+	private int engMarks;
+	private int mathMarks;
+	private int csMarks;
 
 	public String getPhone() {
 		return phone;
@@ -46,5 +49,20 @@ public class Student {
 				"ID " + id + " ; Name: " + name + " ; " +
 				"Email " + email + " ; Phone: " + phone 
 			);
+	}
+
+	public void setEngMarks(int english) {
+		this.engMarks = english;
+		
+	}
+
+	public void setMathMarks(int maths) {
+		this.mathMarks = maths;
+		
+	}
+
+	public void setCsMarks(int cs) {
+		this.csMarks = cs;
+		
 	}
 }

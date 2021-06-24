@@ -6,6 +6,19 @@ public class TestCases {
 		testRange();
 	}
 
+
+
+	public static void testQueue() {
+		Queue q = new Queue();
+
+		q.enqueue( 1);
+		q.enqueue( 2);
+		q.enqueue(3);
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+	}
+
 	public static void testRange() {
 		int[] arr = { 5, 100, 45, 98, 50 };
 		int size = arr.length;

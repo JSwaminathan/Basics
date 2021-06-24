@@ -1,10 +1,10 @@
 package programming.arjun;
 
-//to implement queue using stack 
-//principle of queue -> first in first out 
-/*principle of stack -> last in first out 
- * 
+/**
+ * to implement queue using stack 
+ *
  */
+
 import java.util.*;
 
 public class Queue {
@@ -17,11 +17,19 @@ public class Queue {
 
 	}
 
+	/**
+	 * To addd an element into a queue.
+	 * @param x
+	 */
 	public void enqueue(int x) {
 		stack1.push(x);
 
 	}
 
+	/**
+	 * Remove an element from a queue.
+	 * @return
+	 */
 	public int dequeue() {
 		int x;
 		if (stack1.empty()) {

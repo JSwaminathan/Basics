@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.jaa.schoolmgmt.Marks;
 import com.jaa.schoolmgmt.Student;
+import com.jaa.schoolmgmt.StudentMarks;
 
 public class DBStudentManagementSystem {
 
@@ -64,7 +65,10 @@ public class DBStudentManagementSystem {
 		Reader reader;
 		try {
 			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+<<<<<<< HEAD
+=======
 
+>>>>>>> 252c695abbbca4bf7728c5a54a03a1d9e30b4992
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -170,5 +174,23 @@ public class DBStudentManagementSystem {
 
 	public void deleteStudent() {
 
+	}
+	public void getStudentMarks(StudentMarks student) {
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return;
+		}
+
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		SqlSession session = sqlSessionFactory.openSession();
+
+		session.update("studentMarks.getAll",student);
+
+		session.commit();
+		session.close();
 	}
 }

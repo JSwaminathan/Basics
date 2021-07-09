@@ -8,6 +8,7 @@ public class StudentsClass {
 	Hashtable<String, Student> students;
 	
 	public StudentsClass() {
+		System.out.println("I am in constructor!");
 		students = new Hashtable<String, Student>(); 
 	}
 

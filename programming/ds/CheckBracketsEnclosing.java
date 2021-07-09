@@ -13,7 +13,8 @@ public class CheckBracketsEnclosing {
 				st.push(ch1);
 				continue;
 
-			} else if (ch1 == '}' || ch1 == ']' || ch1 == ')') {
+			} 
+			else if (ch1 == '}' || ch1 == ']' || ch1 == ')') {
 				if (st.empty()) {
 					return false;
 				}

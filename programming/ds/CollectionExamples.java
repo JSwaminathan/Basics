@@ -1,9 +1,33 @@
 package programming.ds;
 
-import java.util.ArrayList;
-import java.util.Vector;
+
+import java.util.*;
 
 public class CollectionExamples {
+	public void testHashTable() {
+		
+		Hashtable<Integer, String> hash = new Hashtable<Integer, String>();
+		hash.put(1, "Ashwin");
+		hash.put(2, "Arjun");
+		hash.put(3, "xyz");
+		String val1=hash.get(1);
+		//System.out.println(val1);
+		String val2=hash.get(4);
+		//System.out.println(val2);
+		
+		Enumeration<String> names=hash.elements();
+		while(names.hasMoreElements()) {
+			System.out.println(names.nextElement());
+		}
+		hash.remove(2);
+		Enumeration<String> names2=hash.elements();
+		while(names2.hasMoreElements()) {
+			System.out.println(names2.nextElement());
+		}
+		
+		
+	
+	}
 
 	public void testVectorList() {
 		Vector<String> v = new Vector<String>();
@@ -63,7 +87,7 @@ public class CollectionExamples {
 
 	public static void main(String[] args) {
 		CollectionExamples c = new CollectionExamples();
-		c.testVectorList();
+		c.testHashTable();
 
 	}
 

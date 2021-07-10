@@ -14,24 +14,28 @@ import java.util.ArrayDeque;
  *         list is pushed into the confirmed list.
  */
 public class WaitingListMech {
+	private static final int MAXCONFRIMED = 30;
+	private static final int MAXWAITING = 20;
+
 	private ArrayDeque<Integer> cl = new ArrayDeque<Integer>();
 	private ArrayDeque<Integer> wl = new ArrayDeque<Integer>();
 
-	public void dequeue() {
-		if (cl.size() == 30 && wl.size() != 0) {
-			cl.remove();
-		int waiting = wl.remove();
-		cl.add(waiting);
+	public int dequeue() {
+		if (cl.size() == MAXCONFRIMED && wl.size() != 0) {
+			int element = cl.remove();
+			int waiting = wl.remove();
+			cl.add(waiting);
+			return element;
 		}
+		return 0;
 
 	}
 
 	public void enqueue(int i) {
-		WaitingListMech wlm = new WaitingListMech();
 
 		int size = cl.size();
-		if (size >= 30) {
-			wlm.enqueueWaiting(i);
+		if (size == 30) {
+			enqueueWaiting(i);
 		} else
 			cl.add(i);
 
@@ -47,13 +51,21 @@ public class WaitingListMech {
 
 	}
 
+	private void printQueue() {
+		System.out.println("CL  "+cl.toString());
+		System.out.println("WL  "+wl.toString());
+	}
+
 	public static void main(String[] args) {
 		WaitingListMech wlm = new WaitingListMech();
-		for (int i = 0; i <= 30; i++) {
+		for (int i = 0; i < 35; i++) {
 			wlm.enqueue(i);
 
 		}
-
+		wlm.printQueue();
+		int element=wlm.dequeue();
+		wlm.printQueue();
+		System.out.println("removed element  is"+element);
 	}
 
 }

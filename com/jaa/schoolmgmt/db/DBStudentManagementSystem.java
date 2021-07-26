@@ -65,10 +65,7 @@ public class DBStudentManagementSystem {
 		Reader reader;
 		try {
 			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
-<<<<<<< HEAD
-=======
 
->>>>>>> 252c695abbbca4bf7728c5a54a03a1d9e30b4992
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -175,6 +172,7 @@ public class DBStudentManagementSystem {
 	public void deleteStudent() {
 
 	}
+
 	public void getStudentMarks(StudentMarks student) {
 		Reader reader;
 		try {
@@ -188,7 +186,7 @@ public class DBStudentManagementSystem {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = sqlSessionFactory.openSession();
 
-		session.update("studentMarks.getAll",student);
+		session.update("studentMarks.getAll", student);
 
 		session.commit();
 		session.close();

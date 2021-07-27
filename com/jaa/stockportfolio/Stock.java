@@ -2,8 +2,8 @@ package com.jaa.stockportfolio;
 
 public class Stock {
 	private float price;
-	private int seqID;
-	private String symbol;
+	private int id;
+	private String ticker;
 	
 	public float getPrice() {
 		return price;
@@ -11,17 +11,17 @@ public class Stock {
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	public int getSeqID() {
-		return seqID;
+	public int getId() {
+		return id;
 	}
-	public void setSeqID(int seqID) {
-		this.seqID = seqID;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getSymbol() {
-		return symbol;
+	public String getTicker() {
+		return ticker;
 	}
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
+	public void setTicker(String ticker) {
+		this.ticker = ticker;
 	}
 	
 }

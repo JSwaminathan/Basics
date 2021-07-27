@@ -29,9 +29,10 @@ public class DBStocks {
 			for(Stock stock: stocks) {
 				session.insert("Stock.insertStock",stock);
 				System.out.println("record inserted successfully");
-				session.commit();
-				session.close();
+				
 			}
+			session.commit();
+			session.close();
 			
 		} catch (RuntimeException re) {
 			re.printStackTrace();

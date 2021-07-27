@@ -12,13 +12,13 @@
             <property name = "url" value = "jdbc:mysql://localhost:3306/details"/>
             <property name = "username" value = "root"/>
             <property name = "password" value = "arjuacchu"/>
-            <property name = "password" value = "arjuacchu"/>
+           
          </dataSource>   
          
       </environment>
    </environments>
    <mappers>
-         <mapper resource = "mybatis/Student.xml"/>
+         <mapper resource = "mybatis/Stock.xml"/>
    </mappers>
 
 </configuration>

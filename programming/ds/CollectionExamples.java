@@ -1,7 +1,13 @@
 package programming.ds;
 
+<<<<<<< Updated upstream
 
 import java.util.*;
+=======
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Vector;
+>>>>>>> Stashed changes
 
 public class CollectionExamples {
 	public void testHashTable() {
@@ -59,6 +65,7 @@ public class CollectionExamples {
 
 	public void testArrayList() {
 		ArrayList<String> arrayList = new ArrayList<String>();
+		Scanner scanner = new Scanner (System.in);
 		arrayList.add("ashwin");
 		arrayList.add("arjun");
 		arrayList.add("meena");

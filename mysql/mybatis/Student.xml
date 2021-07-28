@@ -52,10 +52,5 @@
 		(#{id}, #{name},
 		#{phone}, #{email});
 	</insert>
-<<<<<<< HEAD
-      </  
 
-=======
-	
->>>>>>> 252c695abbbca4bf7728c5a54a03a1d9e30b4992
 </mapper>

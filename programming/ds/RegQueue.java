@@ -5,6 +5,8 @@ package programming.ds;
  *
  */
 public class RegQueue extends LinkedList {
+	public Queue Confirmed;
+
 	public void enqueue(int value) {
 		insertEnd(value);
 	}

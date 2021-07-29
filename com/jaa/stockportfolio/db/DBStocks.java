@@ -3,6 +3,7 @@ package com.jaa.stockportfolio.db;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -12,6 +13,30 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.jaa.stockportfolio.Stock;
 
 public class DBStocks {
+	public List<Stock> getStocks() {
+
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		SqlSession session = sqlSessionFactory.openSession();
+
+
+		List<Stock> stocks = session.selectList("Stock.getAll");
+
+		session.commit();
+		session.close();
+
+		return (stocks);
+
+	}
+
 	public void updateStocks(ArrayList<Stock> stocks) {
 		Reader reader;
 		try {

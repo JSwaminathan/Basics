@@ -1,6 +1,7 @@
 package com.jaa.stockportfolio;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.jaa.stockportfolio.db.DBStocks;
 
@@ -9,7 +10,11 @@ public class PortfolioManager {
 
 	public void getStocks() {
 		StockRealtimeHandler handler = new StockRealtimeHandler();
-		handler.getRealtimeStockValue("MARUTI");
+		DBStocks db = new DBStocks();
+		List<Stock> stocks ;
+		stocks = db.getStocks();
+		System.out.println(stocks);
+		//handler.getRealtimeStockValue("MARUTI");
 	}
 
 	public void updateStocks() {

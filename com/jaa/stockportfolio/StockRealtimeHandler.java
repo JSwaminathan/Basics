@@ -1,6 +1,7 @@
 package com.jaa.stockportfolio;
 
 import java.io.BufferedReader;
+ 
 import java.io.InputStreamReader;
 
 import org.apache.http.HttpResponse;
@@ -35,6 +36,7 @@ public class StockRealtimeHandler {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(urlString);
 		HttpResponse response = client.execute(request);
+		StringBuffer buffer = new StringBuffer(); 
 
 		// Get the response
 		BufferedReader rd = new BufferedReader
@@ -43,8 +45,11 @@ public class StockRealtimeHandler {
 
 		String line = "";
 		while ((line = rd.readLine()) != null) {
-		    System.out.println(line);
+		   // System.out.println(line);
+		    buffer.append(line);
 		}
+		System.out.println(buffer.toString());
+		JSONObject json = new JSONObject(string);  
 	}
 
 }

@@ -10,11 +10,14 @@ public class PortfolioManager {
 
 	public void getStocks() {
 		StockRealtimeHandler handler = new StockRealtimeHandler();
+		/*
 		DBStocks db = new DBStocks();
 		List<Stock> stocks ;
 		stocks = db.getStocks();
 		System.out.println(stocks);
-		//handler.getRealtimeStockValue("MARUTI");
+		
+		*/
+		handler.getRealtimeStockValue("MARUTI");
 	}
 
 	public void updateStocks() {

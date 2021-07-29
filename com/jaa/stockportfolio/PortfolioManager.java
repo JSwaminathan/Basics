@@ -10,14 +10,18 @@ public class PortfolioManager {
 
 	public void getStocks() {
 		StockRealtimeHandler handler = new StockRealtimeHandler();
-		/*
+		
 		DBStocks db = new DBStocks();
 		List<Stock> stocks ;
 		stocks = db.getStocks();
 		System.out.println(stocks);
 		
-		*/
-		handler.getRealtimeStockValue("MARUTI");
+		for (Stock stock : stocks) {
+			String name = stock.getTicker();
+			System.out.println("Getting price for: " + name);
+			handler.getRealtimeStockValue(name);
+		}
+		
 	}
 
 	public void updateStocks() {

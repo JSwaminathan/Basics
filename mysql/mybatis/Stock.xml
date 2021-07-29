@@ -12,7 +12,7 @@
 	</resultMap>
 
 	<select id="getAll" resultMap="result">
-		SELECT * FROM Stock;
+		SELECT * FROM stockportfolio;
 	</select>
 
 	

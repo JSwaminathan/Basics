@@ -8,6 +8,8 @@ public class PortfolioManager {
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
 
 	public void getStocks() {
+		StockRealtimeHandler handler = new StockRealtimeHandler();
+		handler.getRealtimeStockValue("MARUTI");
 	}
 
 	public void updateStocks() {
@@ -17,7 +19,7 @@ public class PortfolioManager {
 	}
 
 	public static void main(String[] args) {
-		PortfolioManager handler = new StockHandler();
+		PortfolioManager handler = new PortfolioManager();
 		handler.getStocks();
 		handler.updateStocks();
 	}

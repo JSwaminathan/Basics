@@ -8,10 +8,10 @@
 		<result property="id" column="ID" />
 	</resultMap>
 	
-	<resultMap id="stocks" type="com.jaa.stockportfolio.Stock">
+	<resultMap id="stockportfolio" type="com.jaa.stockportfolio.StockPortfolioData">
 	</resultMap>
 
-	<select id="getAll" resultMap="result">
+	<select id="getAll" resultMap="stockportfolio">
 		SELECT * FROM stockportfolio;
 	</select>
 

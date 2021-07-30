@@ -12,20 +12,33 @@ public class PortfolioManager {
 		StockRealtimeHandler handler = new StockRealtimeHandler();
 		
 		DBStocks db = new DBStocks();
-		List<Stock> stocks ;
-		stocks = db.getStocks();
-		System.out.println(stocks);
+		List<StockPortfolioData> dbstocks = db.getStocks();
+		System.out.println(dbstocks);
 		
-		for (Stock stock : stocks) {
+		// Update the Arraylist using the stocks we got from DB
+		
+		int i = 1001;
+		
+		for (StockPortfolioData spd : dbstocks) {
+			Stock stock = new Stock();
+			stock.setTicker(spd.getTicker());
+			stock.setId(i);
+			i++;
 			String name = stock.getTicker();
 			System.out.println("Getting price for: " + name);
-			handler.getRealtimeStockValue(name);
+			float price = handler.getRealtimeStockValue(name);
+			// TODO if price is negative, then something went wrong - handle it.
+			stock.setPrice(price);
+			
+			stocks.add(stock);
 		}
 		
 	}
 
-	public void updateStocks() {
+	private void updateStocks() {
 		DBStocks db = new DBStocks();
+		// Update all the stocks in the time-series database.
+		// The prices are already retrieved by the real-time handler.
 		db.updateStocks(stocks);
 
 	}

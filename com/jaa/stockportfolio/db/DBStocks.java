@@ -11,9 +11,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.jaa.stockportfolio.Stock;
+import com.jaa.stockportfolio.StockPortfolioData;
 
 public class DBStocks {
-	public List<Stock> getStocks() {
+	public List<StockPortfolioData> getStocks() {
 
 		Reader reader;
 		try {
@@ -28,7 +29,7 @@ public class DBStocks {
 		SqlSession session = sqlSessionFactory.openSession();
 
 
-		List<Stock> stocks = session.selectList("Stock.getAll");
+		List<StockPortfolioData> stocks = session.selectList("Stock.getAll");
 
 		session.commit();
 		session.close();

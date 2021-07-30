@@ -27,16 +27,17 @@ public class StockRealtimeHandler {
 	public float getRealtimeStockValue(String ticker) {
 		String httpURL = URL + "&" + "symbol=" + EXCHANGE + ":" + ticker + "&" + "apikey=" + APIKEY;
 		try {
+			
 			callURL(httpURL);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return (0);
+		return (-1);
 	}
 
-	public float callURL(String urlString) throws Exception {
-		System.out.println("URL:" + urlString);
+	private float callURL(String urlString) throws Exception {
+		System.out.println("Calling URL " + urlString);
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(urlString);
 		HttpResponse response = client.execute(request);
@@ -48,10 +49,10 @@ public class StockRealtimeHandler {
 		String line = "";
 		while ((line = rd.readLine()) != null) {
 			buffer.append(line);
+			System.out.println(line);
 		}
 		String json = buffer.toString();
-		System.out.println("Received: " + json);
-
+		
 		float ticker = getTickerPrice(json);
 
 		return (ticker);
@@ -64,9 +65,9 @@ public class StockRealtimeHandler {
 			jsonNode = objectMapper.readTree(json);
 			if (jsonNode != null) {
 				JsonNode parent = jsonNode.get("Global Quote");
-				JsonNode ticker = parent.get("05. price");
-				if (ticker != null) {
-					String tickerValue = ticker.textValue();
+				JsonNode priceLabel = parent.get("05. price");
+				if (priceLabel != null) {
+					String tickerValue = priceLabel.textValue();
 					System.out.println("TICKER TEXT: " + tickerValue);
 					return (Float.parseFloat(tickerValue));
 				}

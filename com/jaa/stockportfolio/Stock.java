@@ -6,6 +6,7 @@ public class Stock {
 	private String ticker;
 
 	public float getPrice() {
+		System.out.println("Price: " + price);
 		return price;
 	}
 

@@ -1,0 +1,20 @@
+ {"nilgris": 
+ {
+    "milk": {
+      "price":"20",
+      "Manufacturer":"aavin",
+      "unit":"500 ml"
+    }
+   , "soda": {
+      "price":"75",
+      "manufacturer":"pepsi",
+      "unit":"750 ml"
+    }
+  ,  "biscuit":{
+      "price" :"35",
+      "manufacturer":"parle-g",
+      "unit":"1 packet"
+    }
+  }
+ }
+ 

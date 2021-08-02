@@ -2,6 +2,10 @@ package com.jaa.billing;
 
 import java.util.Hashtable;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class GSTCalculator extends Hashtable<String, Integer> {
 	public GSTCalculator() {
 		readGSTConfiguration();
@@ -10,6 +14,30 @@ public class GSTCalculator extends Hashtable<String, Integer> {
 	private void readGSTConfiguration() {
 		// TODO Auto-generated method stub
 		
+	}
+	private float loadGst(String json) {
+		ObjectMapper objectMapper = new ObjectMapper();
+		JsonNode jsonNode;
+		try {
+			jsonNode = objectMapper.readTree(json);
+			if (jsonNode != null) {
+				JsonNode parent = jsonNode.get("Global Quote");
+				JsonNode priceLabel = parent.get("05. price");
+				if (priceLabel != null) {
+					String tickerValue = priceLabel.textValue();
+					System.out.println("TICKER TEXT: " + tickerValue);
+					return (Float.parseFloat(tickerValue));
+				}
+			}
+
+		} catch (
+
+		JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return -1;
 	}
 	
 	/**

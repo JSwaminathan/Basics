@@ -7,7 +7,8 @@ package com.jaa.billing;
  */
 public class Product {
 	private String name;
-	private int mrp;
+	private float mrp;
+	private String manufacturer;
 
 	public String getName() {
 		return name;
@@ -17,12 +18,17 @@ public class Product {
 		this.name = name;
 	}
 
-	public int getMrp() {
+	public float getMrp() {
 		return mrp;
 	}
 
-	public void setMrp(int mrp) {
+	public void setMrp(float mrp) {
 		this.mrp = mrp;
+	}
+
+	public void setManufacturer(String manufacturer) {
+		// TODO Auto-generated method stub
+		this.manufacturer = manufacturer;
 	}
 
 }

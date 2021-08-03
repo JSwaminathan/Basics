@@ -1,0 +1,27 @@
+Objective: 
+To allow a consumer to purchase.
+
+There are multiple sellers each with set of Products which may over lap.
+Each seller has -
+
+* List of Products:
+	Each Product has -
+		*Name
+		*Price
+		* Description or Manufacturer
+* GST
+	* Common for all Sellers. Has Product Name & GST %
+
+For Each seller:
+	* Open the JSON FILE (Example: Nilgris.json)
+	* Read the array of products sold by the seller
+	* Create the products corresponding to the read json file.
+	* Populate the list of products solds in the product list.
+
+Complete reading the JSON files for all sellers.
+
+Add all sellers to a LIST in Billing Solution.
+
+Now allow a consumer to select a seller, list of products & quantity.
+
+Calculate the total cost, including GST and generate bill.'

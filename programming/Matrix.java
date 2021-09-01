@@ -31,4 +31,18 @@ public class Matrix {
 	public int getColCount() {
 		return (col);
 	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < getRowCount(); i++) {
+			for (int j = 0; j < getColCount(); j++) {
+				int val = getValue(i, j); 
+				sb.append(val + " ");
+				
+			}
+			sb.append(System.lineSeparator());
+		}
+		
+		return (sb.toString());
+	}
 }

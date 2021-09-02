@@ -12,7 +12,7 @@ public class Circle extends Shape {
 	}
 	
 	public void draw() {
-		System.out.println("I am circle with radius" + radius);
+		System.out.println("I am circle with radius " + radius);
 	}
 
 	

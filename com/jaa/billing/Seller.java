@@ -31,6 +31,13 @@ public class Seller {
 		this.contactNo = contactNo;
 	}
 
+	private String getFileName() {
+		String fileName = "C:\\Users\\ashwi\\Programming\\dependencies\\Nilgiris.json";
+		return fileName;
+
+	}
+	
+
 	private void readProductList() {
 		// Based on the seller Name, read the corresponding JSON File.
 		// Locate the file at "<ROOT\Data\SellerName.json
@@ -39,13 +46,14 @@ public class Seller {
 		// Once the data is read set the attributes -
 		// Create Product
 		// Set Product Name, MRP (or Price) etc
+		String fileName =getFileName();
 
-		File jsonFile = new File("C:\\Users\\arjun\\Documents\\GitHub\\Basics\\Data\\Nilgris.json");
+		File jsonFile = new File(fileName);
 		if (jsonFile.exists()) {
 			System.out.println(jsonFile + " exists");
 
 		} else {
-			System.err.println("does not exist");
+			System.err.println("does not exist" + jsonFile.toString());
 			throw new RuntimeException("file does not exist");
 		}
 		try {
@@ -57,7 +65,7 @@ public class Seller {
 				buffer.append(line);
 			}
 			scanner.close();
-			System.out.println(buffer.toString());
+			System.out.println("buffer content"+buffer.toString());
 			String jsonString = buffer.toString();
 			readJson(jsonString);
 
@@ -79,9 +87,9 @@ public class Seller {
 			if (jsonNode != null) {
 				JsonNode parent = jsonNode.get("nilgris");
 				if (parent != null) {
-					System.out.println("exists");
+					System.out.println("Nilgris root exists exists");
 				} else {
-					throw new RuntimeException("does not exist");
+					throw new RuntimeException("Nilgris root does NOT exist");
 
 				}
 				Iterator<JsonNode> js = jsonNode.iterator();
@@ -121,6 +129,8 @@ public class Seller {
 	// TEMP
 	public static void main(String[] args) {
 		Seller seller = new Seller("Nilgris");
+		System.out.println("Seller: " + seller.productList);
+		
 	}
 
 }

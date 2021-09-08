@@ -31,4 +31,9 @@ public class Product {
 		this.manufacturer = manufacturer;
 	}
 
+	public String toString() {
+		String str = "name : " + name + " MRP : " + mrp + " manufacturer : " + manufacturer;
+		return str;
+	}
+
 }

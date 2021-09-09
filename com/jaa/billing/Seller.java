@@ -16,7 +16,7 @@ public class Seller {
 	private String contactNo;
 
 	public Seller(String name) {
-		readProductList();
+		readProductList(name);
 	}
 
 	public String getName() {
@@ -31,14 +31,13 @@ public class Seller {
 		this.contactNo = contactNo;
 	}
 
-	private String getFileName() {
-		String fileName = "C:\\Users\\ashwi\\Programming\\dependencies\\Nilgiris.json";
+	private String getFileName(String name) {
+		String fileName = "C:\\Users\\ashwi\\Programming\\dependencies\\Data\\"+name+".json";
 		return fileName;
 
 	}
-	
 
-	private void readProductList() {
+	private void readProductList(String name) {
 		// Based on the seller Name, read the corresponding JSON File.
 		// Locate the file at "<ROOT\Data\SellerName.json
 
@@ -46,7 +45,7 @@ public class Seller {
 		// Once the data is read set the attributes -
 		// Create Product
 		// Set Product Name, MRP (or Price) etc
-		String fileName =getFileName();
+		String fileName = getFileName(name);
 
 		File jsonFile = new File(fileName);
 		if (jsonFile.exists()) {
@@ -65,9 +64,9 @@ public class Seller {
 				buffer.append(line);
 			}
 			scanner.close();
-			System.out.println("buffer content"+buffer.toString());
+			System.out.println("buffer content" + buffer.toString());
 			String jsonString = buffer.toString();
-			readJson(jsonString);
+			readJson(jsonString,name);
 
 		} catch (FileNotFoundException e) {
 
@@ -78,18 +77,18 @@ public class Seller {
 
 	}
 
-	public void readJson(String json) {
+	public void readJson(String json,String name) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		JsonNode jsonNode;
 		try {
 
 			jsonNode = objectMapper.readTree(json);
 			if (jsonNode != null) {
-				JsonNode parent = jsonNode.get("nilgris");
+				JsonNode parent = jsonNode.get(name);
 				if (parent != null) {
-					System.out.println("Nilgris root exists exists");
+					System.out.println(name +"  root exists exists");
 				} else {
-					throw new RuntimeException("Nilgris root does NOT exist");
+					throw new RuntimeException(name +"  root does NOT exist");
 
 				}
 				Iterator<JsonNode> js = jsonNode.iterator();
@@ -124,13 +123,6 @@ public class Seller {
 		product.setManufacturer(manufacturer);
 		productList.add(product);
 
-	}
-
-	// TEMP
-	public static void main(String[] args) {
-		Seller seller = new Seller("Nilgris");
-		System.out.println("Seller: " + seller.productList);
-		
 	}
 
 }

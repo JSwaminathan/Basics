@@ -31,53 +31,13 @@ public class Seller {
 		this.contactNo = contactNo;
 	}
 
-	private String getFileName(String name) {
-		String fileName = "C:\\Users\\ashwi\\Programming\\dependencies\\Data\\"+name+".json";
-		return fileName;
-
-	}
-
 	private void readProductList(String name) {
-		// Based on the seller Name, read the corresponding JSON File.
-		// Locate the file at "<ROOT\Data\SellerName.json
 
-		// Convert the read JSON string to JSON object.
-		// Once the data is read set the attributes -
-		// Create Product
-		// Set Product Name, MRP (or Price) etc
-		String fileName = getFileName(name);
-
-		File jsonFile = new File(fileName);
-		if (jsonFile.exists()) {
-			System.out.println(jsonFile + " exists");
-
-		} else {
-			System.err.println("does not exist" + jsonFile.toString());
-			throw new RuntimeException("file does not exist");
-		}
-		try {
-			Scanner scanner = new Scanner(jsonFile);
-			StringBuffer buffer = new StringBuffer();
-			String line;
-			while (scanner.hasNextLine()) {
-				line = scanner.nextLine();
-				buffer.append(line);
-			}
-			scanner.close();
-			System.out.println("buffer content" + buffer.toString());
-			String jsonString = buffer.toString();
-			readJson(jsonString,name);
-
-		} catch (FileNotFoundException e) {
-
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			throw new RuntimeException("file does not exist");
-		}
-
+		String jsonString = JsonUtils.readJsonFile(name);
+		readJson(jsonString, name);
 	}
 
-	public void readJson(String json,String name) {
+	public void readJson(String json, String name) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		JsonNode jsonNode;
 		try {
@@ -86,9 +46,9 @@ public class Seller {
 			if (jsonNode != null) {
 				JsonNode parent = jsonNode.get(name);
 				if (parent != null) {
-					System.out.println(name +"  root exists exists");
+					System.out.println(name + "  root exists exists");
 				} else {
-					throw new RuntimeException(name +"  root does NOT exist");
+					throw new RuntimeException(name + "  root does NOT exist");
 
 				}
 				Iterator<JsonNode> js = jsonNode.iterator();

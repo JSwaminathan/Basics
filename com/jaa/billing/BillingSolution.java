@@ -10,11 +10,13 @@ public class BillingSolution {
 	public static final String NILGRIS = "Nilgris";
 	public static final String HY = "HyperMarket";
 	public static final String GREENS = "Greens";
+	
 
 	/* Get the class name to be printed on */
 	static Logger log = Logger.getLogger(BillingSolution.class.getName());
 
 	HashMap<String, Seller> sellers;
+	GSTCalculator calc;
 
 	private void initializeSellers() {
 		log.info("Initializing sellers system");
@@ -37,6 +39,7 @@ public class BillingSolution {
 	
 	private void initializeGST() {
 		log.info("Initializing GST");
+		calc = new GSTCalculator();
 	}
 
 	public static void main(String[] args) {

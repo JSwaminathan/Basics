@@ -17,14 +17,18 @@ public class GSTCalculator implements GSTProvider {
 	}
 
 	private void readGSTConfiguration() {
-		JsonUtils.readJsonFile(NAME);
-
+		
+		String gstContent = JsonUtils.readJsonFile(NAME);
+		
 	}
 
 	@Override
 	public float getGSTRate(String productType) {
-
-		return 0;
+		Float gstRate = gstTable.get(productType);
+		if (gstRate == null) {
+			throw new RuntimeException("Unknown product type :" + productType);
+		}
+		return gstRate;
 	}
 
 }

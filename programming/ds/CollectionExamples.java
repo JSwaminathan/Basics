@@ -1,38 +1,33 @@
 package programming.ds;
 
-<<<<<<< Updated upstream
-
 import java.util.*;
-=======
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
->>>>>>> Stashed changes
 
 public class CollectionExamples {
 	public void testHashTable() {
-		
+
 		Hashtable<Integer, String> hash = new Hashtable<Integer, String>();
 		hash.put(1, "Ashwin");
 		hash.put(2, "Arjun");
 		hash.put(3, "xyz");
-		String val1=hash.get(1);
-		//System.out.println(val1);
-		String val2=hash.get(4);
-		//System.out.println(val2);
-		
-		Enumeration<String> names=hash.elements();
-		while(names.hasMoreElements()) {
+		String val1 = hash.get(1);
+		// System.out.println(val1);
+		String val2 = hash.get(4);
+		// System.out.println(val2);
+
+		Enumeration<String> names = hash.elements();
+		while (names.hasMoreElements()) {
 			System.out.println(names.nextElement());
 		}
 		hash.remove(2);
-		Enumeration<String> names2=hash.elements();
-		while(names2.hasMoreElements()) {
+		Enumeration<String> names2 = hash.elements();
+		while (names2.hasMoreElements()) {
 			System.out.println(names2.nextElement());
 		}
-		
-		
-	
+
 	}
 
 	public void testVectorList() {
@@ -60,12 +55,42 @@ public class CollectionExamples {
 	}
 
 	/**
+	 * this collection is used for faster retrival of data and keep unique elements.
+	 * distributes into buckets as the underlying implementation is based on
+	 * hashtable
+	 * 
+	 */
+	public void testLinkedHashSet() {
+		LinkedHashSet<String> hashset = new LinkedHashSet<String>();
+		hashset.add("Ashwin");
+		hashset.add("Arjun");
+		hashset.add("axol");
+		hashset.add("zayan");
+		for (String name : hashset) {
+			System.out.println("name:" + name);
+		}
+		hashset.remove("axol");
+		for (String name : hashset) {
+			System.out.println("name:" + name);
+		}
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("rahul");
+		list.add("max");
+		list.add("cyrus");
+		
+		hashset.addAll(list);
+		
+		for (String name : hashset) {
+			System.out.println("name:" + name);
+		}
+	}
+
+	/**
 	 * add 'n' strings and print them
 	 */
-
 	public void testArrayList() {
 		ArrayList<String> arrayList = new ArrayList<String>();
-		Scanner scanner = new Scanner (System.in);
+		Scanner scanner = new Scanner(System.in);
 		arrayList.add("ashwin");
 		arrayList.add("arjun");
 		arrayList.add("meena");
@@ -94,7 +119,7 @@ public class CollectionExamples {
 
 	public static void main(String[] args) {
 		CollectionExamples c = new CollectionExamples();
-		c.testHashTable();
+		c.testLinkedHashSet();
 
 	}
 

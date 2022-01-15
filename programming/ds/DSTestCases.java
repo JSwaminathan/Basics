@@ -9,7 +9,27 @@ import java.util.Set;
 
 public class DSTestCases {
 	public static void main(String[] args) {
-		testQueue();
+		testGenericStack();
+	}
+
+	private static void testGenericStack() {
+		GenericStack<Integer> stack = new GenericStack<Integer>(1000);
+		stack.push(100);
+		stack.push(500);
+		int value1 = stack.pop();
+		System.out.println("value1 is " + value1);
+		int value2 = stack.pop();
+		System.out.println("value1 is " + value2);
+		
+		
+		GenericStack<String> namesStack = new GenericStack<String>(1000);
+		namesStack.push("Ashwin");
+		namesStack.push("Jay");
+		String val1 = namesStack.pop();
+		System.out.println("value1 is " + val1);
+		String val2 = namesStack.pop();
+		System.out.println("value1 is " + val2);
+		
 	}
 
 	private static void testTree() {

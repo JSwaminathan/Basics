@@ -1,7 +1,11 @@
 package programming;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Vector;
 
 import javax.management.RuntimeErrorException;
@@ -491,6 +495,182 @@ public class Practice {
 				}
 			}
 
+		}
+
+	}
+
+	/**
+	 * this method takes the contribution and indices from an invester enters the
+	 * contribution within the specified indices;
+	 * 
+	 * @param investment
+	 * @param contribution
+	 * @param start
+	 * @param end
+	 */
+	public void investment(int size, int[] investment, int contribution, int start, int end) {
+
+		if (start > size || end > size || end < start) {
+			throw new RuntimeErrorException(null, "starting index or ending index greater than size of array");
+		}
+
+		for (int i = 0; i < size; i++) {
+			if (i >= start && i <= end) {
+				investment[i] = investment[i] + contribution;
+
+			}
+		}
+
+		// int maxInvestment=0;
+		for (int i = 0; i < size; i++) {
+			System.out.println(investment[i]);
+
+		}
+
+	}
+
+	public int returnCount(char[] alpha) {
+		int count = 1;
+		for (int i = 0; i < alpha.length; i++) {
+			count = 1;
+			for (int k = 1; k < alpha.length; k++) {
+				if (alpha.length == 1) {
+					count = 1;
+					break;
+				} else if (i == k) {
+					continue;
+				} else {
+					if (alpha[i] == (alpha[k])) {
+						count = count + 1;
+
+					}
+				}
+
+			}
+		}
+		return count + 1;
+	}
+
+	public static boolean StringEquality() {
+		// Practice prac =new Practice();
+		String s1 = "cat";
+		String s2 = "cat";
+		if (s1 == s2) {
+			return true;
+		} else
+			return false;
+
+	}
+
+	/**
+	 * This method is to return the 'n'th smallest or greatest number of a given
+	 * array
+	 * 
+	 * @param array
+	 * @param flag
+	 * @param n
+	 * @return
+	 * @return
+	 */
+
+	public int findNthSmallest(int[] array, String flag, int n) {
+		int value = 0;
+		Arrays.sort(array);
+
+		if (flag.equals("s")) {
+			for (int i = 0; i < array.length; i++) {
+				if (n == 1) {
+					System.out.println("The  smallest number is : " + array[(n - 1)]);
+					break;
+				} else if (n == 2) {
+					value = array[n - 1];
+					System.out.println("The " + n + "nd smallest number is : " + array[(n - 1)]);
+					break;
+				} else if (n == 3) {
+					value = array[n - 1];
+					System.out.println("The " + n + "rd smallest number is : " + array[(n - 1)]);
+					break;
+				} else {
+					value = array[n - 1];
+					System.out.println("The " + n + "th smallest number is : " + array[(n - 1)]);
+					break;
+				}
+				
+			}
+			return value;
+		}
+		if (flag == "G") {
+			for (int i = 0; i < array.length; i++) {
+				if (n == 1) {
+					System.out.println("The greatest number is : " + array[((array.length + 1) - (n + 1))]);
+					break;
+				} else if (n == 2) {
+					System.out.println("The " + n + "nd greatest number is : " + array[((array.length + 1) - (n + 1))]);
+					break;
+				} else if (n == 3) {
+					System.out.println("The " + n + "rd greatest number is : " + array[((array.length + 1) - (n + 1))]);
+					break;
+				} else {
+					System.out.println("The " + n + "th greatest number is : " + array[((array.length + 1) - (n + 1))]);
+					break;
+				}
+			}
+
+		}
+		return value;
+	}
+
+	public String encodeAlphabets(char[] alpha) {
+		HashMap<Character, Integer> counter2 = new HashMap<Character, Integer>();
+		for (int i = 0; i < alpha.length; i++) {
+			int count = returnCount(alpha);
+
+		}
+		String newVal = "";
+
+		return newVal;
+	}
+
+	public void decodeAlphabets() {
+
+	}
+
+	/**
+	 * this methood take array of integers and add first and last elements and puts
+	 * resultant into a new array of the 0th element
+	 * 
+	 * 2. next the 2nd element of (1)the array and 2nd last elements are added and
+	 * put in the last element of the new array.
+	 * 
+	 * @param array
+	 * @return
+	 */
+	public void addArrayElements(int[] array, int[] array2) {
+		int k = array2.length - 1;
+		int n1 = array.length - 1;
+		int n = 0;
+
+		for (int i = 0; n <= n1; n++, n1--) {
+
+			// System.out.println("i k : " + i + " " + k);
+
+			if (n % 2 == 0) {// number even
+
+				array2[i] = array[n] + array[n1];
+				// System.out.println("Value " + i + " " + array2[i]);
+				i++;
+
+				// System.out.println(n1+" "+n);
+
+			} else {
+
+				array2[k] = array[n1] + array[n];
+				// System.out.println("Value " + k + " " + array2[k]);
+				k--;
+
+				// System.out.println("iteration "+n);
+
+			}
 		}
 
 	}

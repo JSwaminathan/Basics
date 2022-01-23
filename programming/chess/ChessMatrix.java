@@ -1,4 +1,4 @@
-package programming;
+package programming.chess;
 
 public class ChessMatrix {
 	private int row;

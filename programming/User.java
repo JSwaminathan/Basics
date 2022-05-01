@@ -1,10 +1,22 @@
-package programming; 
-public class User { 
-int balance = 10000; 
-public int getBalance() { 
- return balance; 
-} 
-public void setBalance(int balance) { 
- this.balance = balance; 
-} 
+package programming.resourcemgmt;
+
+public class User {
+	private String name;
+	private int id;
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+
 }

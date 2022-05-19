@@ -1,12 +1,15 @@
 package programming;
 
-// Simple comment.
+/**
+ * 
+ * @author jay swaminathan
+ * 
+ *
+ */
+
 public class HelloWorld {
-	public static void main(String[] args)  {
-		System.out.println("Hello PF World!");
+	public static void main(String[] args) {
+		System.out.println("Hello  World!");
 	}
-//from the age of writing hello world we are now doing database connected to a workspace,
-//send it to the internet and collabrating !!
-	
-	
+
 }

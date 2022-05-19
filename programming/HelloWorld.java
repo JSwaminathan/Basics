@@ -2,7 +2,7 @@ package programming;
 
 /**
  * 
- * @author jay swaminathan
+ * @author Jay Swaminathan
  * 
  * 
  *

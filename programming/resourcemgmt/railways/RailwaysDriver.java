@@ -5,7 +5,7 @@ import java.util.Scanner;
 import programming.resourcemgmt.*;
 
 public class RailwaysDriver {
-	public static final int ABSOLUTE_LIMIT = 10; // Max seats per coach.
+	public static final int ABSOLUTE_LIMIT = 10; // Max seats per COACH.
 	public static final int INDIVIDUAL_LIMIT = 6; // Max seats a user can book
 	
 	public static final int TOTAL_COACHES = 10;

@@ -1,4 +1,4 @@
-package programming;
+package programming.shape;
 
 public class Circle extends Shape {
 	public static final float PI = 3.14F;

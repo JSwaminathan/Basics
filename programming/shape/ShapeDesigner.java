@@ -1,4 +1,4 @@
-package programming;
+package programming.shape;
 
 import java.util.ArrayList;
 import java.util.Scanner;

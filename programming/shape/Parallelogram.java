@@ -1,4 +1,4 @@
-package programming;
+package programming.shape;
 
 public class Parallelogram extends Shape {
 

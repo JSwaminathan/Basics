@@ -1,4 +1,4 @@
-package programming.resourcemgmt;
+package com.jaa.resourcemgmt;
 
 public class User {
 	private String name;

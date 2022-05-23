@@ -1,8 +1,8 @@
-package programming.resourcemgmt.railways;
+package com.jaa.resourcemgmt.app.railways;
 
 import java.util.Scanner;
 
-import programming.resourcemgmt.*;
+import com.jaa.resourcemgmt.*;
 
 public class RailwaysDriver {
 	public static final int ABSOLUTE_LIMIT = 10; // Max seats per COACH.

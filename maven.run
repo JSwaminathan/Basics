@@ -1,0 +1,2 @@
+mvn archetype:generate -DgroupId=com.jaa.resourcemgmt.app.railways -DartifactId=reserve -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+

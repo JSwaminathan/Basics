@@ -1,4 +1,4 @@
-package programming.resourcemgmt;
+package com.jaa.resourcemgmt;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -7,5 +7,5 @@
 	</classpathentry>
 	<classpathentry excluding="dependencies/|mybatis/|mysql/" kind="src" path=""/>
 	<classpathentry kind="lib" path="mysql"/>
-	<classpathentry kind="output" path=""/>
+	<classpathentry kind="output" path="classes"/>
 </classpath>

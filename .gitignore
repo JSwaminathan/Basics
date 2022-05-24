@@ -1,6 +1,8 @@
 
 *.html
 *.class
+.DS_Store
+.project
 
 programming/.DS_Store
 com/jaa/billing/logs/log.out

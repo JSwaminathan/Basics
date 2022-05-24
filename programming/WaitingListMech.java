@@ -1,7 +1,4 @@
-/**
- * 
- */
-package programming.ds;
+package programming;
 
 import java.util.ArrayDeque;
 

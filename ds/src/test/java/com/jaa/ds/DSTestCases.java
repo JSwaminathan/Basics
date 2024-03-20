@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class DSTestCases {
 	public static void main(String[] args) {
-		testGenericStack();
+		testTree();
 	}
 
 	private static void testGenericStack() {
@@ -53,7 +53,7 @@ public class DSTestCases {
 		if (tree.exists("Random") == false) {
 			System.out.print("Did not find #2 - PASSED");
 		} else {
-			System.out.println("Did not find #2 " + " FAILED. ");
+			System.out.println("Found #2! " + " FAILED. ");
 		}
 	}
 
@@ -99,7 +99,7 @@ public class DSTestCases {
 		}
 
 		if (llist.exists("Random") == false) {
-			System.out.print("Did not Found #2");
+			System.out.print("Did not find #2");
 		}
 	}
 
